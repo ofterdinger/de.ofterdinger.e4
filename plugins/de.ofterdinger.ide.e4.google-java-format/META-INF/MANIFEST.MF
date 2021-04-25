@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %bundle.name
+Bundle-SymbolicName: de.ofterdinger.ide.e4.google-java-format;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: %bundle.vendorName
+Require-Bundle: com.google.guava,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.core,
+ org.eclipse.text
+Bundle-ClassPath: .,
+ lib/google-java-format.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: de.ofterdinger.ide.e4.google-java-format
+Bundle-Activator: de.ofterdinger.ide.e4.googlejavaformat.Activator
+Bundle-ActivationPolicy: lazy
+Eclipse-ExtensibleAPI: true
