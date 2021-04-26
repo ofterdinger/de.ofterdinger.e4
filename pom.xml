@@ -33,7 +33,6 @@
     <jacoco.report.dir>${test.buildDir}/jacoco</jacoco.report.dir>
 
     <targetDef.artifactId>de.ofterdinger.ide.e4.target.previous</targetDef.artifactId>
-    <codesign.skip>true</codesign.skip>
   </properties>
 
   <modules>
@@ -58,8 +57,6 @@
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>target-platform-configuration</artifactId>
         <configuration>
-          <pomDependencies>consider</pomDependencies>
-          <executionEnvironment>JavaSE-${maven.compiler.release}</executionEnvironment>
           <target>
             <artifact>
               <groupId>${project.groupId}</groupId>
@@ -67,23 +64,6 @@
               <version>${project.version}</version>
             </artifact>
           </target>
-          <environments>
-            <environment>
-              <os>win32</os>
-              <ws>win32</ws>
-              <arch>x86_64</arch>
-            </environment>
-            <environment>
-              <os>linux</os>
-              <ws>gtk</ws>
-              <arch>x86_64</arch>
-            </environment>
-            <environment>
-              <os>macosx</os>
-              <ws>cocoa</ws>
-              <arch>x86_64</arch>
-            </environment>
-          </environments>
         </configuration>
       </plugin>
     </plugins>
@@ -98,7 +78,7 @@
         </os>
       </activation>
       <properties>
-        <targetDef.artifactId>de.ofterdinger.ide.e4.target.previous</targetDef.artifactId>
+        <targetDef.artifactId>de.ofterdinger.ide.e4.target.latest</targetDef.artifactId>
       </properties>
     </profile>
 
@@ -122,7 +102,7 @@
         </os>
       </activation>
       <properties>
-        <targetDef.artifactId>de.ofterdinger.ide.e4.target.latest</targetDef.artifactId>
+        <targetDef.artifactId>de.ofterdinger.ide.e4.target.previous</targetDef.artifactId>
       </properties>
     </profile>
 

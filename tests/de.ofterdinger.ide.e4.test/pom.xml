@@ -19,29 +19,8 @@
     <skipPdeTests>false</skipPdeTests>
   </properties>
 
-  <dependencies>
-    <!-- workaround for issue with mockito on SapMachine 11 -->
-    <dependency>
-      <groupId>net.bytebuddy</groupId>
-      <artifactId>byte-buddy</artifactId>
-      <version>1.8.22</version>
-    </dependency>
-  </dependencies>
-
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>target-platform-configuration</artifactId>
-        <configuration>
-          <pomDependencies>consider</pomDependencies>
-          <dependency-resolution>
-            <extraRequirements>
-            </extraRequirements>
-          </dependency-resolution>
-        </configuration>
-      </plugin>
-
       <!-- ====================== -->
       <!-- Test and code coverage -->
       <!-- ====================== -->
