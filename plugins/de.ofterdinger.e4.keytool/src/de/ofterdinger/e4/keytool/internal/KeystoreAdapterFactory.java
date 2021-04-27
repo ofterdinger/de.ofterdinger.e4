@@ -1,5 +1,6 @@
 package de.ofterdinger.e4.keytool.internal;
 
+import static de.ofterdinger.e4.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.apache.commons.lang3.ArrayUtils.EMPTY_OBJECT_ARRAY;
 import static org.eclipse.ui.plugin.AbstractUIPlugin.imageDescriptorFromPlugin;
 
@@ -33,9 +34,9 @@ public class KeystoreAdapterFactory implements IAdapterFactory {
             if (object instanceof TreeObject) {
               TreeObject treeObj = (TreeObject) object;
               if (treeObj.isPrivateKey()) {
-                return imageDescriptorFromPlugin(KeytoolPlugin.PLUGIN_ID, ImageKeys.LOCK_CLOSED);
+                return imageDescriptorFromPlugin(PLUGIN_ID, ImageKeys.LOCK_CLOSED);
               }
-              return imageDescriptorFromPlugin(KeytoolPlugin.PLUGIN_ID, ImageKeys.LOCK_OPEN);
+              return imageDescriptorFromPlugin(PLUGIN_ID, ImageKeys.LOCK_OPEN);
             }
             return null;
           }
@@ -64,7 +65,7 @@ public class KeystoreAdapterFactory implements IAdapterFactory {
           @Override
           public ImageDescriptor getImageDescriptor(Object object) {
             if (object instanceof TreeObject) {
-              return imageDescriptorFromPlugin(KeytoolPlugin.PLUGIN_ID, ImageKeys.ICON_KEY);
+              return imageDescriptorFromPlugin(PLUGIN_ID, ImageKeys.ICON_KEY);
             }
             return null;
           }
@@ -93,7 +94,7 @@ public class KeystoreAdapterFactory implements IAdapterFactory {
           @Override
           public ImageDescriptor getImageDescriptor(Object object) {
             if (object instanceof TreeChainObject) {
-              return imageDescriptorFromPlugin(KeytoolPlugin.PLUGIN_ID, ImageKeys.CERTIFICATE);
+              return imageDescriptorFromPlugin(PLUGIN_ID, ImageKeys.CERTIFICATE);
             }
             return null;
           }

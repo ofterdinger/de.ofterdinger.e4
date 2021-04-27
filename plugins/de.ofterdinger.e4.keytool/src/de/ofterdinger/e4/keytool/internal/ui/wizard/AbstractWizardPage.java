@@ -138,7 +138,7 @@ public abstract class AbstractWizardPage extends WizardPage {
     return this.modifyListener;
   }
 
-  protected void handleBrowse(SelectionEvent e, Text filenameText) {
+  private void handleBrowse(SelectionEvent e, Text filenameText) {
     if (e.widget instanceof Button) {
       FileDialog dialog = new FileDialog(getShell(), 4096);
       dialog.setFilterExtensions(getExtensions());

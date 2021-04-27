@@ -18,8 +18,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 public class ImportCertificatePage extends AbstractShowCertificatePage {
-  Button importPrivateKeyCheckBox;
-  Text password;
+  private Button importPrivateKeyCheckBox;
+  private Text password;
   private Text alias;
   private Text filenameText;
   private File fileToImport = null;

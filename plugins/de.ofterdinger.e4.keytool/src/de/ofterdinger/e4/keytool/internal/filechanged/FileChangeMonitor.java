@@ -15,8 +15,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class FileChangeMonitor {
-  private static final int DEFAULT_QUIESCENT_SCANS = 2;
-  private static final long DEFAULT_SCAN_RATE = 60000;
   private static final String CAN_ONLY_INCLUDE_SUBDIRS_FOR_DIRECTORIES =
       "Can only include subdirs for directories ";
   private static final String IS_A_FILE = " is a file.";
@@ -27,10 +25,6 @@ public class FileChangeMonitor {
   private int quiescentScans;
   private long scanRate;
   private TimerClone timer = null;
-
-  public FileChangeMonitor() {
-    this(DEFAULT_SCAN_RATE, DEFAULT_QUIESCENT_SCANS);
-  }
 
   public FileChangeMonitor(long theScanRate, int theQuiescentScans) {
     this.scanRate = theScanRate;

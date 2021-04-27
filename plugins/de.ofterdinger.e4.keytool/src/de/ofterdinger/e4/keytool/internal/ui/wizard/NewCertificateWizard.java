@@ -32,8 +32,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 
 public class NewCertificateWizard extends Wizard implements INewWizard {
-  public static final String TITLE = "Create a new certificate";
-  private static final int NO_OF_TASKS = 3;
   private NewCertificatePage newCertificatePage;
   private NewKeystorePage newKeystorePage;
   private TreeParent selection = null;
@@ -41,7 +39,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
 
   public NewCertificateWizard() {
     setNeedsProgressMonitor(true);
-    setWindowTitle(TITLE);
+    setWindowTitle("Create a new certificate");
   }
 
   public NewCertificateWizard(TreeParent selection) {
@@ -166,7 +164,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
       IProgressMonitor monitor,
       Date notBefore,
       Date notAfter) {
-    monitor.beginTask("Creating " + alias + " certificate", NO_OF_TASKS);
+    monitor.beginTask("Creating " + alias + " certificate", 3);
     CompleteCertificate completeCertificate =
         CertTools.createCertificate(person, notBefore, notAfter);
     completeCertificate.setAlias(alias);

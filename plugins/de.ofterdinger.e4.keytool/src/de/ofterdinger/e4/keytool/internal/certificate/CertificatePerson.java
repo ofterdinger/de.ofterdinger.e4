@@ -3,7 +3,6 @@ package de.ofterdinger.e4.keytool.internal.certificate;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 public class CertificatePerson {
-  private static final int INITIAL_BUF_SIZE = 256;
   private String countryCode;
   private String email;
   private String location;
@@ -123,7 +122,7 @@ public class CertificatePerson {
 
   @Override
   public String toString() {
-    StringBuilder buff = new StringBuilder(INITIAL_BUF_SIZE);
+    StringBuilder buff = new StringBuilder(256);
     append("CN=", this.name, buff);
     append("OU=", this.organizationUnit, buff);
     append("O=", this.organization, buff);
