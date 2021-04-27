@@ -19,7 +19,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 public class NewKeystorePage extends AbstractWizardPage {
-  private static final int NO_OF_COLUMNS = 3;
   private Text filenameText;
   private Combo keystoreTypeCombo;
   private Text passwordText;
@@ -40,7 +39,7 @@ public class NewKeystorePage extends AbstractWizardPage {
     Composite container = new Composite(parent, 0);
     GridLayout layout = new GridLayout();
     container.setLayout(layout);
-    layout.numColumns = NO_OF_COLUMNS;
+    layout.numColumns = 3;
     addFilenameInputs(container);
     this.passwordText = this.makeLine(container, "Keystore password", EMPTY);
     new org.eclipse.swt.widgets.Label(container, 0);

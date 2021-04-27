@@ -29,9 +29,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 public abstract class AbstractWizardPage extends WizardPage {
-  public static final String CREATE_A_NEW_KEYSTORE_TEXT = "<Create a new keystore>";
-  public static final String LABEL_KEYSTORE = "Keystore";
-  private static final int LENGTH_OF_DATE = 10;
+  static final String CREATE_A_NEW_KEYSTORE_TEXT = "<Create a new keystore>";
   private int colspan = 0;
   private final DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
   private boolean editable = true;
@@ -72,7 +70,7 @@ public abstract class AbstractWizardPage extends WizardPage {
 
   protected Combo addOpenKeystores(Composite container, TreeParent selection) {
     Label label = new Label(container, 0);
-    label.setText(LABEL_KEYSTORE);
+    label.setText("Keystore");
     GridData gridData = new GridData(4, 4, true, false, 1, 1);
     Combo keystoreCombo = new Combo(container, 12);
     keystoreCombo.setLayoutData(gridData);
@@ -104,7 +102,7 @@ public abstract class AbstractWizardPage extends WizardPage {
 
   protected void checkDate(Text dateText, String fieldName) {
     try {
-      if (dateText == null || dateText.getText().length() != LENGTH_OF_DATE) {
+      if (dateText == null || dateText.getText().length() != 10) {
         updateStatus("'" + fieldName + "' is not a valid date");
       } else {
         this.dateFormat.parse(dateText.getText());

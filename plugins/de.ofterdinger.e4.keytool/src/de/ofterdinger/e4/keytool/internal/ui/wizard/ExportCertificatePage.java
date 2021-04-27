@@ -17,8 +17,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 public class ExportCertificatePage extends AbstractShowCertificatePage {
-  Text certificatePasswordText;
-  Button exportPrivateKeyCheckBox;
+  private Text certificatePasswordText;
+  private Button exportPrivateKeyCheckBox;
   private final CompleteCertificate completeCertificate;
   private String extension;
   private Text filenameText;

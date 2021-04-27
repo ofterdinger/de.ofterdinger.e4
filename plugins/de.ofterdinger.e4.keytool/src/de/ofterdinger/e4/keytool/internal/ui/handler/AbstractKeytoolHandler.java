@@ -14,12 +14,13 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 abstract class AbstractKeytoolHandler extends AbstractHandler {
+
   @Override
   public final Object execute(ExecutionEvent event) throws ExecutionException {
     try {
       IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
       window.getActivePage().showView(TextConstants.KEYSTORE_VIEW_ID);
-      this.execute(window);
+      execute(window);
     } catch (PartInitException e) {
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
     }

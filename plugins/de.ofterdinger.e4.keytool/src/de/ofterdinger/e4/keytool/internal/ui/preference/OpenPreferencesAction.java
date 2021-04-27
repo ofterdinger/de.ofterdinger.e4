@@ -12,6 +12,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 
 public class OpenPreferencesAction extends Action {
+
   private final Shell shell;
   private final IWorkbench workbench;
 

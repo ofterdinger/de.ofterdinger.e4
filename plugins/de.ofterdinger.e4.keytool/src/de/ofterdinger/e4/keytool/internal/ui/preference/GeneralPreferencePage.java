@@ -17,16 +17,16 @@ import org.eclipse.ui.PlatformUI;
 
 public class GeneralPreferencePage extends FieldEditorPreferencePage
     implements IWorkbenchPreferencePage {
-  private static final int NO_OF_COLUMNS = 3;
-  public static final String KEYSTORE_FILE = "prefs_keystore_filename";
-  public static final String KEYSTORE_TYPE = "prefs_keystore_type";
-  public static final String KEYSTORE_PASS = "prefs_keystore_password";
-  public static final String FILECHANGE_MONITOR_INTERVAL = "prefs_keystore_filechange_interval";
+
+  static final String KEYSTORE_FILE = "prefs_keystore_filename";
+  static final String KEYSTORE_TYPE = "prefs_keystore_type";
+  static final String KEYSTORE_PASS = "prefs_keystore_password";
+  static final String FILECHANGE_MONITOR_INTERVAL = "prefs_keystore_filechange_interval";
   private static GeneralPreferencePage instance = null;
   private IWorkbench workbench;
 
   public GeneralPreferencePage() {
-    super(1);
+    super(GRID);
     setPreferenceStore(KeytoolPlugin.getDefault().getPreferenceStore());
     setDescription("Customize the keytool.");
   }
@@ -48,7 +48,7 @@ public class GeneralPreferencePage extends FieldEditorPreferencePage
         new LabelFieldEditor(
             "Set interval in milliseconds between checks to see if an open keystore has changed.",
             getFieldEditorParent());
-    label.adjustForNumColumns(NO_OF_COLUMNS);
+    label.adjustForNumColumns(3);
     IntegerFieldEditor fileChangeMonitorInterval =
         new IntegerFieldEditor(
             FILECHANGE_MONITOR_INTERVAL, "Filechange monitor interval", getFieldEditorParent());

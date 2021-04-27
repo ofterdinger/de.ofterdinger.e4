@@ -6,6 +6,7 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 
 public class NewCertificateHandler extends AbstractKeytoolHandler {
+
   @Override
   public void execute(IWorkbenchWindow window) throws ExecutionException {
     NewCertificateWizard wizard = new NewCertificateWizard();

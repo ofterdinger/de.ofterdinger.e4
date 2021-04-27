@@ -28,13 +28,12 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
 public class ImportCertificateWizard extends Wizard implements INewWizard {
-  private static final String TITLE = "Import a certificate";
   private File fileToImport = null;
   private ImportCertificatePage impPage;
   private NewKeystorePage newKeystorePage;
 
   public ImportCertificateWizard() {
-    setWindowTitle(TITLE);
+    setWindowTitle("Import a certificate");
     setNeedsProgressMonitor(true);
   }
 

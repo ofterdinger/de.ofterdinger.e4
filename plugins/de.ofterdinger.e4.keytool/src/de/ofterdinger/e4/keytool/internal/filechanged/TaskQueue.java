@@ -1,8 +1,7 @@
 package de.ofterdinger.e4.keytool.internal.filechanged;
 
 class TaskQueue {
-  private static final int NO_OF_CLONES = 128;
-  private TimerTaskClone[] queue = new TimerTaskClone[NO_OF_CLONES];
+  private TimerTaskClone[] queue = new TimerTaskClone[128];
   private int size = 0;
 
   TaskQueue() {}

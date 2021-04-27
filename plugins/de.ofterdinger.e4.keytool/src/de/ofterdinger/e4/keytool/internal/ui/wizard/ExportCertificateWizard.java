@@ -21,7 +21,6 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
 public class ExportCertificateWizard extends Wizard implements INewWizard {
-  private static final int NO_OF_TASKS = 2;
   private static final String TITLE = "Export the certificate";
   private CompleteCertificate completeCertificate;
   private ExportCertificatePage expPage;
@@ -99,7 +98,7 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
 
   private void createCertificateFile(String alias, String filename, IProgressMonitor monitor)
       throws CertificateEncodingException, IOException {
-    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS);
+    monitor.beginTask("Saving " + alias + " certificate", 2);
     try (FileOutputStream fos = new FileOutputStream(new File(filename))) {
       monitor.worked(1);
       fos.write(this.completeCertificate.getCertificate().getEncoded());
@@ -110,7 +109,7 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
 
   private void createCertificateFileWithPrivateKey(
       String alias, String filename, IProgressMonitor monitor) {
-    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS);
+    monitor.beginTask("Saving " + alias + " certificate", 2);
     monitor.worked(1);
     CertTools.exportPersonalCertToPFX(this.completeCertificate, filename);
     monitor.worked(2);

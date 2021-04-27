@@ -8,7 +8,6 @@ import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
-  public static final int DEFAULT_FILECHANGE_MONITOR_INTERVAL = 60000;
 
   @Override
   public final void initializeDefaultPreferences() {
@@ -16,7 +15,6 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
     defaults.setDefault(GeneralPreferencePage.KEYSTORE_FILE, EMPTY);
     defaults.setDefault(GeneralPreferencePage.KEYSTORE_TYPE, KeystoreType.JKS.getType());
     defaults.setDefault(GeneralPreferencePage.KEYSTORE_PASS, EMPTY);
-    defaults.setDefault(
-        GeneralPreferencePage.FILECHANGE_MONITOR_INTERVAL, DEFAULT_FILECHANGE_MONITOR_INTERVAL);
+    defaults.setDefault(GeneralPreferencePage.FILECHANGE_MONITOR_INTERVAL, 60000);
   }
 }
