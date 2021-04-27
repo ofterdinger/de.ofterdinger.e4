@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.ofterdinger.ide.e4.google-java-format.feature"
+      id="de.ofterdinger.e4.google-java-format.feature"
       label="%feature.name"
       version="1.0.0.qualifier"
       provider-name="%feature.vendorName"
