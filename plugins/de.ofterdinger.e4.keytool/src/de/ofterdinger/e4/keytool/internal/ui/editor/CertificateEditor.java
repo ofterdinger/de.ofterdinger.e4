@@ -60,13 +60,14 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.MultiPageEditorPart;
 
 public class CertificateEditor extends MultiPageEditorPart implements IResourceChangeListener {
+
   private static final String COULD_NOT_GENERATE_CSR =
       "*** Could not generate CSR - Possible wrong certificate password ***";
   private static final int FONT_HEIGHT = 23;
   private static final String FOR_CERTIFICATE_NOT_SETTED = "Password for certificate not setted";
   private static HashMap<String, Color> resources = new HashMap<>();
   private static final String SETTING_CSR = "Setting CSR...";
-  Text csrText;
+  private Text csrText;
   private final IAdapterFactory adapterFactory = new KeystoreAdapterFactory();
   private CompleteCertificate completeCertificate;
   private ExportCertificateAction exportAction;
@@ -122,7 +123,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
 
   @Override
   public final void resourceChanged(IResourceChangeEvent event) {
-    if (event.getType() == 2) {
+    if (event.getType() == IResourceChangeEvent.PRE_CLOSE) {
       Display.getDefault().asyncExec(() -> {});
     }
   }

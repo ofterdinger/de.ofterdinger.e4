@@ -31,10 +31,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 public class OpenKeyStoreDialog extends Dialog {
-  private static final int INITIAL_ARRAY_CAPACITY = 10;
-  private static final int MINIMUM_WIDTH = 40;
-  private static final int NO_OF_CHARS_TO_HINT_WIDTH = 20;
-  private static final int NO_OF_GRIDS = 3;
+
   private String filename;
   private Text filenameText;
   private Image[] images;
@@ -113,17 +110,17 @@ public class OpenKeyStoreDialog extends Dialog {
   @Override
   protected Control createDialogArea(Composite parent) {
     Composite composite = new Composite(parent, 0);
-    GridLayout layout = new GridLayout(NO_OF_GRIDS, false);
+    GridLayout layout = new GridLayout(3, false);
     composite.setLayout(layout);
     GridData dataSpan2 = new GridData(4, 4, false, false, 2, 1);
     GridData dataNoSpan = new GridData(1, 2, false, false);
-    dataNoSpan.minimumWidth = MINIMUM_WIDTH;
+    dataNoSpan.minimumWidth = 40;
     Label keystoreTypeLabel = new Label(composite, 0);
     keystoreTypeLabel.setText("&Type:");
     keystoreTypeLabel.setLayoutData(dataNoSpan);
     this.keystoreTypeCombo = new Combo(composite, 12);
     GridData gridData = new GridData(4, 4, true, false, 2, 1);
-    gridData.widthHint = this.convertHeightInCharsToPixels(NO_OF_CHARS_TO_HINT_WIDTH);
+    gridData.widthHint = this.convertHeightInCharsToPixels(20);
     this.keystoreTypeCombo.setLayoutData(gridData);
     Label filenameLabel = new Label(composite, 0);
     filenameLabel.setText("&Filename:");
@@ -167,7 +164,7 @@ public class OpenKeyStoreDialog extends Dialog {
       return EMPTY_STRING_ARRAY;
     }
     StringTokenizer tokens = new StringTokenizer(csl, ",");
-    ArrayList<String> array = new ArrayList<>(INITIAL_ARRAY_CAPACITY);
+    ArrayList<String> array = new ArrayList<>(10);
     while (tokens.hasMoreTokens()) {
       array.add(tokens.nextToken().trim());
     }

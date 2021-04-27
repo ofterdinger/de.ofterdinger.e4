@@ -5,6 +5,7 @@ import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.swt.widgets.Shell;
 
 public class PasswordDialog extends InputDialog {
+
   public PasswordDialog(
       Shell parentShell,
       String dialogTitle,

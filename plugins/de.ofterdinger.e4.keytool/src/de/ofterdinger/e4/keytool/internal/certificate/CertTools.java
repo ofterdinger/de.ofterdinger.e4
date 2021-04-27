@@ -60,7 +60,6 @@ public final class CertTools {
   private static final char[] HEX_CHARS =
       new char[] {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
   private static final int NO_OF_ROLLS = 4;
-  private static final int RADIX = 16;
   private static final int SECOND_BYTE_ADDER = 15;
   private static X509V1CertificateGenerator v1CertGen = new X509V1CertificateGenerator();
 
@@ -187,7 +186,7 @@ public final class CertTools {
       throws InvalidKeyException, SignatureException, CertificateException,
           NoSuchAlgorithmException, NoSuchProviderException {
     Date notBefore = new Date(System.currentTimeMillis());
-    Date notAfter = new Date(System.currentTimeMillis() + 189216000000L);
+    Date notAfter = new Date(System.currentTimeMillis() + SIX_YEARS);
     return CertTools.createSelfIssuerCertificate(
         person, pubKey, privKey, serialNumber, notBefore, notAfter);
   }
@@ -348,7 +347,7 @@ public final class CertTools {
   public static String getSerialNumber(Certificate certificate) {
     if (certificate instanceof X509Certificate) {
       X509Certificate x509certificate = (X509Certificate) certificate;
-      return x509certificate.getSerialNumber().toString(RADIX);
+      return x509certificate.getSerialNumber().toString(16);
     }
     return null;
   }
