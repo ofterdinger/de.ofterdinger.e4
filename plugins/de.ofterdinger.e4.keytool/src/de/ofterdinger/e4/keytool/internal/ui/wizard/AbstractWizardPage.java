@@ -29,11 +29,11 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 public abstract class AbstractWizardPage extends WizardPage {
-  public static final String CREATE_A_NEW_KEYSTORE_TEXT = "<Create a new keystore>"; // $NON-NLS-1$
-  public static final String LABEL_KEYSTORE = "Keystore"; // $NON-NLS-1$
+  public static final String CREATE_A_NEW_KEYSTORE_TEXT = "<Create a new keystore>"; 
+  public static final String LABEL_KEYSTORE = "Keystore"; 
   private static final int LENGTH_OF_DATE = 10;
   private int colspan = 0;
-  private final DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy"); // $NON-NLS-1$
+  private final DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy"); 
   private boolean editable = true;
   private ModifyListener modifyListener = null;
 
@@ -59,7 +59,7 @@ public abstract class AbstractWizardPage extends WizardPage {
 
   protected void addBrowseButton(Composite composite, Text filenameText) {
     Button button = new Button(composite, 8);
-    button.setText("Browse..."); // $NON-NLS-1$
+    button.setText("Browse..."); 
     button.addSelectionListener(
         new SelectionAdapter() {
 
@@ -105,12 +105,12 @@ public abstract class AbstractWizardPage extends WizardPage {
   protected void checkDate(Text dateText, String fieldName) {
     try {
       if (dateText == null || dateText.getText().length() != LENGTH_OF_DATE) {
-        updateStatus("'" + fieldName + "' is not a valid date"); // $NON-NLS-1$ //$NON-NLS-2$
+        updateStatus("'" + fieldName + "' is not a valid date");  //$NON-NLS-2$
       } else {
         this.dateFormat.parse(dateText.getText());
       }
     } catch (ParseException parseException) {
-      updateStatus("'" + fieldName + "' is not a valid date"); // $NON-NLS-1$ //$NON-NLS-2$
+      updateStatus("'" + fieldName + "' is not a valid date");  //$NON-NLS-2$
     }
   }
 
@@ -129,7 +129,7 @@ public abstract class AbstractWizardPage extends WizardPage {
   protected abstract void dialogChanged();
 
   protected String[] getExtensions() {
-    return new String[] {"*.cer", "*.pfx"}; // $NON-NLS-1$ //$NON-NLS-2$
+    return new String[] {"*.cer", "*.pfx"};  //$NON-NLS-2$
   }
 
   protected ModifyListener getModifyListener() {

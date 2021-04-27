@@ -2,9 +2,10 @@ package de.ofterdinger.e4.keytool.internal.ui.wizard;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
-import de.ofterdinger.e4.keytool.internal.certificate.CertificatePerson;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
+
+import de.ofterdinger.e4.keytool.internal.certificate.CertificatePerson;
 
 public abstract class AbstractShowCertificatePage extends AbstractWizardPage {
   private String alias = EMPTY;
@@ -69,36 +70,26 @@ public abstract class AbstractShowCertificatePage extends AbstractWizardPage {
   }
 
   protected void addCertificateToPage(Composite composite) {
-    this.aliasText = this.makeLine(composite, "Alias", this.alias); // $NON-NLS-1$
+    this.aliasText = this.makeLine(composite, "Alias", this.alias);
     if (this.showAll) {
       this.personNameText =
-          this.makeLine(
-              composite, "Your first and last name", this.person.getName()); // $NON-NLS-1$
+          this.makeLine(composite, "Your first and last name", this.person.getName());
       this.orgUnitText =
           this.makeLine(
-              composite,
-              "Name of your organizational unit",
-              this.person.getOrganizationUnit()); // $NON-NLS-1$
+              composite, "Name of your organizational unit", this.person.getOrganizationUnit());
       this.orgText =
-          this.makeLine(
-              composite,
-              "Name of your organizational",
-              this.person.getOrganization()); // $NON-NLS-1$
+          this.makeLine(composite, "Name of your organizational", this.person.getOrganization());
       this.location =
-          this.makeLine(
-              composite, "Name of your City or Locality", this.person.getLocation()); // $NON-NLS-1$
+          this.makeLine(composite, "Name of your City or Locality", this.person.getLocation());
       this.stateText =
-          this.makeLine(
-              composite, "Name of your State or Province", this.person.getState()); // $NON-NLS-1$
+          this.makeLine(composite, "Name of your State or Province", this.person.getState());
       this.countryText =
           this.makeLine(
-              composite,
-              "The two-letter country code for this unit",
-              this.person.getCountryCode()); // $NON-NLS-1$
+              composite, "The two-letter country code for this unit", this.person.getCountryCode());
     }
     this.validFromText =
-        this.makeLine(composite, "Valid from (dd-mm-yyyy)", this.validFrom); // $NON-NLS-1$
+        this.makeLine(composite, "Valid from (dd-mm-yyyy)", this.validFrom); 
     this.validToText =
-        this.makeLine(composite, "Valid to (dd-mm-yyyy)", this.validTo); // $NON-NLS-1$
+        this.makeLine(composite, "Valid to (dd-mm-yyyy)", this.validTo); 
   }
 }

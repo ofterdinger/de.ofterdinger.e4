@@ -12,8 +12,8 @@ public class ExportCertificateAction extends Action {
   private Shell shell;
 
   public ExportCertificateAction(CompleteCertificate completeCertificate) {
-    setText("Export certificate"); // $NON-NLS-1$
-    setToolTipText("Export the open certificate"); // $NON-NLS-1$
+    setText("Export certificate"); 
+    setToolTipText("Export the open certificate"); 
     setImageDescriptor(ImageKeys.getImageDescriptor(ImageKeys.EXPORT_CERTIFICATE));
     this.completeCertificate = completeCertificate;
   }

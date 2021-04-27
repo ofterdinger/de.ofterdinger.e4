@@ -6,7 +6,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
 public class KeytoolPlugin extends AbstractUIPlugin {
-  public static final String PLUGIN_ID = "de.ofterdinger.e4.keytool"; // $NON-NLS-1$
+  public static final String PLUGIN_ID = "de.ofterdinger.e4.keytool"; 
 
   private static KeytoolPlugin plugin;
 
@@ -31,13 +31,13 @@ public class KeytoolPlugin extends AbstractUIPlugin {
   }
 
   public static void showError(String txt, Shell shell) {
-    MessageDialog.openError(shell, "Error", txt); // $NON-NLS-1$
+    MessageDialog.openError(shell, "Error", txt); 
   }
 
   public static void showErrorAsync(final String message, Shell shell) {
     shell
         .getDisplay()
-        .syncExec(() -> MessageDialog.openError(shell, "Keytool error", message)); // $NON-NLS-1$
+        .syncExec(() -> MessageDialog.openError(shell, "Keytool error", message)); 
   }
 
   public static void showMessage(final String title, final String message, Shell shell) {

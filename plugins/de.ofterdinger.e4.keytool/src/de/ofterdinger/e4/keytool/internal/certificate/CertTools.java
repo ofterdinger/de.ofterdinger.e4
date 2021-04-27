@@ -113,11 +113,11 @@ public final class CertTools {
       throws IOException {
     byte[] buf = request.getEncoded();
     StringBuilder buff = new StringBuilder();
-    buff.append("-----BEGIN NEW CERTIFICATE REQUEST-----\n"); // $NON-NLS-1$
+    buff.append("-----BEGIN NEW CERTIFICATE REQUEST-----\n"); 
     try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
       new Base64Encoder().encode(buf, 0, buf.length, out);
       buff.append(out.toString());
-      buff.append("\n-----END NEW CERTIFICATE REQUEST-----\n"); // $NON-NLS-1$
+      buff.append("\n-----END NEW CERTIFICATE REQUEST-----\n"); 
       return buff.toString();
     }
   }
@@ -164,7 +164,7 @@ public final class CertTools {
     v3CertGen.setNotBefore(notBefore);
     v3CertGen.setNotAfter(notAfter);
     v3CertGen.setSubjectDN(new X509Principal(order, attrs));
-    v3CertGen.setSignatureAlgorithm("SHA1WithRSAEncryption"); // $NON-NLS-1$
+    v3CertGen.setSignatureAlgorithm("SHA1WithRSAEncryption"); 
 
     CompleteCertificate clientCertificate = new CompleteCertificate();
     clientCertificate.setIssuer(issuer);
@@ -176,7 +176,7 @@ public final class CertTools {
       clientCertificate.setPrivateKey(personCertificate.getPrivateKey());
     }
 
-    X509Certificate cert = v3CertGen.generate(issuer.getPrivateKey(), "BC"); // $NON-NLS-1$
+    X509Certificate cert = v3CertGen.generate(issuer.getPrivateKey(), "BC"); 
     clientCertificate.setCertificate(cert);
 
     return clientCertificate;
@@ -209,7 +209,7 @@ public final class CertTools {
     v1CertGen.setNotAfter(notAfter);
     v1CertGen.setSubjectDN(new X509Principal(subject));
     v1CertGen.setPublicKey(pubKey);
-    v1CertGen.setSignatureAlgorithm("SHA1WITHRSA"); // $NON-NLS-1$
+    v1CertGen.setSignatureAlgorithm("SHA1WITHRSA"); 
     X509Certificate cert = v1CertGen.generate(privKey);
     cert.verify(pubKey);
     return cert;
@@ -231,8 +231,8 @@ public final class CertTools {
       X509Certificate cert, PrivateKey privateKey, String filename, String password) {
     try (FileOutputStream fos = new FileOutputStream(filename)) {
       String alias =
-          Long.toHexString(SecureRandom.getInstance("SHA1PRNG").nextLong()); // $NON-NLS-1$
-      KeyStore ks = KeyStore.getInstance("PKCS12", "BC"); // $NON-NLS-1$ //$NON-NLS-2$
+          Long.toHexString(SecureRandom.getInstance("SHA1PRNG").nextLong()); 
+      KeyStore ks = KeyStore.getInstance("PKCS12", "BC");  //$NON-NLS-2$
       char[] pwdArray = password.toCharArray();
       ks.load(null, pwdArray);
       Certificate[] certs = new X509Certificate[] {cert};
@@ -370,7 +370,7 @@ public final class CertTools {
   }
 
   public static Certificate loadCertificate(InputStream inputStream) throws CertificateException {
-    CertificateFactory cf = CertificateFactory.getInstance("X.509"); // $NON-NLS-1$
+    CertificateFactory cf = CertificateFactory.getInstance("X.509"); 
     return cf.generateCertificate(inputStream);
   }
 
@@ -403,7 +403,7 @@ public final class CertTools {
   public static CompleteCertificate loadPFX(String filename, String password)
       throws KeyStoreException, NoSuchProviderException, NoSuchAlgorithmException,
           CertificateException, IOException, UnrecoverableKeyException, InvalidKeySpecException {
-    KeyStore ks = KeyStore.getInstance("PKCS12", "BC"); // $NON-NLS-1$ //$NON-NLS-2$
+    KeyStore ks = KeyStore.getInstance("PKCS12", "BC");  //$NON-NLS-2$
     try (FileInputStream fis = new FileInputStream(filename)) {
       ks.load(fis, password.toCharArray());
     }
@@ -424,7 +424,7 @@ public final class CertTools {
     char firstByte = HEX_CHARS[(b & FIRST_BYTE_ADDER) >> NO_OF_ROLLS];
     char secondByte = HEX_CHARS[b & SECOND_BYTE_ADDER];
     if (hexString.length() > 0) {
-      hexString.append(":"); // $NON-NLS-1$
+      hexString.append(":"); 
     }
     hexString.append(firstByte);
     hexString.append(secondByte);
@@ -436,7 +436,7 @@ public final class CertTools {
 
   private static KeyPair getKeypair() throws NoSuchAlgorithmException {
     SecureRandom sr = new SecureRandom();
-    KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA"); // $NON-NLS-1$
+    KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA"); 
     keyGen.initialize(2048, sr);
     return keyGen.generateKeyPair();
   }
@@ -460,7 +460,7 @@ public final class CertTools {
 
   private static PrivateKey makePrivateKey(byte[] encoded)
       throws InvalidKeySpecException, NoSuchAlgorithmException {
-    KeyFactory rSAKeyFactory = KeyFactory.getInstance("RSA"); // $NON-NLS-1$
+    KeyFactory rSAKeyFactory = KeyFactory.getInstance("RSA"); 
     return rSAKeyFactory.generatePrivate(new PKCS8EncodedKeySpec(encoded));
   }
 

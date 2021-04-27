@@ -14,7 +14,7 @@ import org.eclipse.swt.widgets.Text;
 
 public class NewCertificatePage extends AbstractWizardPage {
   private static final int DEFAULT_YEAR_TO_ADD = 5;
-  private static final String LABEL_ALIAS = "Alias"; // $NON-NLS-1$
+  private static final String LABEL_ALIAS = "Alias"; 
   private static final String LABEL_NAME_OF_YOUR_CITY_OR_LOCALITY =
       "Name of your City or Locality"; //$NON-NLS-1$
   private static final String LABEL_NAME_OF_YOUR_ORGANIZATIONAL =
@@ -23,12 +23,12 @@ public class NewCertificatePage extends AbstractWizardPage {
       "Name of your organizational unit"; //$NON-NLS-1$
   private static final String LABEL_NAME_OF_YOUR_STATE_OR_PROVINCE =
       "Name of your State or Province"; //$NON-NLS-1$
-  private static final String LABEL_PASS = "Password"; // $NON-NLS-1$
+  private static final String LABEL_PASS = "Password"; 
   private static final String LABEL_THE_TWO_LETTER_COUNTRY_CODE_FOR_THIS_UNIT =
       "The two-letter country code for this unit"; //$NON-NLS-1$
   private static final String LABEL_VALID_FROM_DD_MM_YYYY =
       "Valid from (dd-mm-yyyy)"; //$NON-NLS-1$
-  private static final String LABEL_VALID_TO_DD_MM_YYYY = "Valid to (dd-mm-yyyy)"; // $NON-NLS-1$
+  private static final String LABEL_VALID_TO_DD_MM_YYYY = "Valid to (dd-mm-yyyy)"; 
   private static final String LABEL_YOUR_FIRST_AND_LAST_NAME =
       "Your first and last name"; //$NON-NLS-1$
   private static final int NO_OF_COLUMNS = 2;
@@ -47,13 +47,13 @@ public class NewCertificatePage extends AbstractWizardPage {
 
   protected NewCertificatePage(String pageName) {
     super(pageName);
-    setTitle("Create a new certificate"); // $NON-NLS-1$
-    setDescription("This wizard creates a new certificate."); // $NON-NLS-1$
+    setTitle("Create a new certificate"); 
+    setDescription("This wizard creates a new certificate."); 
     setPageComplete(false);
   }
 
   protected NewCertificatePage(TreeParent selection) {
-    this("Create a new certificate"); // $NON-NLS-1$
+    this("Create a new certificate"); 
     this.selection = selection;
   }
 
@@ -140,14 +140,14 @@ public class NewCertificatePage extends AbstractWizardPage {
     boolean pageComplete = !AbstractWizardPage.CREATE_A_NEW_KEYSTORE_TEXT.equals(getFilename());
     newKeystorePage.setPageComplete(pageComplete);
     updateStatus(null);
-    checkDate(this.toDateText, "Valid to"); // $NON-NLS-1$
-    checkDate(this.fromDateText, "Valid from"); // $NON-NLS-1$
+    checkDate(this.toDateText, "Valid to"); 
+    checkDate(this.fromDateText, "Valid from"); 
     this.checkStatus(
-        this.firstAndLastnameText, "Firstname and lastname must be specified"); // $NON-NLS-1$
-    this.checkStatus(this.passwordText, "Password must be specified"); // $NON-NLS-1$
-    this.checkStatus(this.aliasText, "Alias must be specified"); // $NON-NLS-1$
+        this.firstAndLastnameText, "Firstname and lastname must be specified"); 
+    this.checkStatus(this.passwordText, "Password must be specified"); 
+    this.checkStatus(this.aliasText, "Alias must be specified"); 
     this.checkStatus(
-        this.keystoreCombo, "Specify which keystore to save the certificate in"); // $NON-NLS-1$
+        this.keystoreCombo, "Specify which keystore to save the certificate in"); 
   }
 
   private NewKeystorePage getNewKeystorePage() {

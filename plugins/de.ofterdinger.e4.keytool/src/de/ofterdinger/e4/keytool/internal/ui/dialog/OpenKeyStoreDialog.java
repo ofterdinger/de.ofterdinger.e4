@@ -85,10 +85,10 @@ public class OpenKeyStoreDialog extends Dialog {
   @Override
   protected final void configureShell(Shell newShell) {
     super.configureShell(newShell);
-    newShell.setText("Open keystorefile"); // $NON-NLS-1$
+    newShell.setText("Open keystorefile"); 
     IProduct product = Platform.getProduct();
     if (product != null) {
-      String[] imageURLs = parseCSL(product.getProperty("windowImages")); // $NON-NLS-1$
+      String[] imageURLs = parseCSL(product.getProperty("windowImages")); 
       if (isNotEmpty(imageURLs)) {
         this.images = new Image[imageURLs.length];
         int i = 0;
@@ -106,7 +106,7 @@ public class OpenKeyStoreDialog extends Dialog {
 
   @Override
   protected void createButtonsForButtonBar(Composite parent) {
-    createButton(parent, 0, "&Load", true); // $NON-NLS-1$
+    createButton(parent, 0, "&Load", true); 
     createButton(parent, 1, IDialogConstants.CANCEL_LABEL, false);
   }
 
@@ -119,19 +119,19 @@ public class OpenKeyStoreDialog extends Dialog {
     GridData dataNoSpan = new GridData(1, 2, false, false);
     dataNoSpan.minimumWidth = MINIMUM_WIDTH;
     Label keystoreTypeLabel = new Label(composite, 0);
-    keystoreTypeLabel.setText("&Type:"); // $NON-NLS-1$
+    keystoreTypeLabel.setText("&Type:"); 
     keystoreTypeLabel.setLayoutData(dataNoSpan);
     this.keystoreTypeCombo = new Combo(composite, 12);
     GridData gridData = new GridData(4, 4, true, false, 2, 1);
     gridData.widthHint = this.convertHeightInCharsToPixels(NO_OF_CHARS_TO_HINT_WIDTH);
     this.keystoreTypeCombo.setLayoutData(gridData);
     Label filenameLabel = new Label(composite, 0);
-    filenameLabel.setText("&Filename:"); // $NON-NLS-1$
+    filenameLabel.setText("&Filename:"); 
     filenameLabel.setLayoutData(new GridData(1, 2, false, false));
     this.filenameText = new Text(composite, 2048);
     this.filenameText.setLayoutData(new GridData(4, 2, true, false));
     Button button = new Button(composite, 8);
-    button.setText("Browse..."); // $NON-NLS-1$
+    button.setText("Browse..."); 
     button.addSelectionListener(
         new SelectionAdapter() {
           @Override
@@ -140,7 +140,7 @@ public class OpenKeyStoreDialog extends Dialog {
           }
         });
     Label passwordLabel = new Label(composite, 0);
-    passwordLabel.setText("&Password:"); // $NON-NLS-1$
+    passwordLabel.setText("&Password:"); 
     passwordLabel.setLayoutData(dataNoSpan);
     this.passwordText = new Text(composite, 4196352);
     this.passwordText.setLayoutData(dataSpan2);
@@ -166,7 +166,7 @@ public class OpenKeyStoreDialog extends Dialog {
     if (csl == null) {
       return EMPTY_STRING_ARRAY;
     }
-    StringTokenizer tokens = new StringTokenizer(csl, ","); // $NON-NLS-1$
+    StringTokenizer tokens = new StringTokenizer(csl, ","); 
     ArrayList<String> array = new ArrayList<>(INITIAL_ARRAY_CAPACITY);
     while (tokens.hasMoreTokens()) {
       array.add(tokens.nextToken().trim());

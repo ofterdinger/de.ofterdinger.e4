@@ -1,8 +1,8 @@
 package de.ofterdinger.e4.keytool.internal.certificate;
 
 public final class KeystoreType {
-  public static final KeystoreType JKS = new KeystoreType("JKS"); // $NON-NLS-1$
-  public static final KeystoreType PKCS12 = new KeystoreType("PKCS12"); // $NON-NLS-1$
+  public static final KeystoreType JKS = new KeystoreType("JKS"); 
+  public static final KeystoreType PKCS12 = new KeystoreType("PKCS12"); 
   private static final KeystoreType[] TYPES = new KeystoreType[] {JKS, PKCS12};
 
   private final String type;
@@ -53,7 +53,7 @@ public final class KeystoreType {
       }
       ++n2;
     }
-    throw new IllegalArgumentException("KeystoreType not supported"); // $NON-NLS-1$
+    throw new IllegalArgumentException("KeystoreType not supported"); 
   }
 
   public static KeystoreType[] getTypes() {

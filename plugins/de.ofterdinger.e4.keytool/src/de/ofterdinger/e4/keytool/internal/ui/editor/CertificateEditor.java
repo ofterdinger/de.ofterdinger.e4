@@ -66,7 +66,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
   private static final String FOR_CERTIFICATE_NOT_SETTED =
       "Password for certificate not setted"; //$NON-NLS-1$
   private static HashMap<String, Color> resources = new HashMap<>();
-  private static final String SETTING_CSR = "Setting CSR..."; // $NON-NLS-1$
+  private static final String SETTING_CSR = "Setting CSR..."; 
   Text csrText;
   private final IAdapterFactory adapterFactory = new KeystoreAdapterFactory();
   private CompleteCertificate completeCertificate;
@@ -132,7 +132,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
   @Override
   protected final void createPages() {
     Platform.getAdapterManager().registerAdapters(this.adapterFactory, TreeChainObject.class);
-    if (getPartName().length() == 0 || getPartName().equals("Certificate editor")) { // $NON-NLS-1$
+    if (getPartName().length() == 0 || getPartName().equals("Certificate editor")) { 
       String partName = getTitleToolTip();
       if (getTitleToolTip().indexOf('/') > -1) {
         partName = getTitleToolTip().substring(getTitleToolTip().lastIndexOf('/') + 1);
@@ -168,7 +168,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
       viewer.setLabelProvider(new KeystoreViewLabelProvider());
       viewer.expandAll();
       int index = this.addPage(composite);
-      setPageText(index, "Certificatechain"); // $NON-NLS-1$
+      setPageText(index, "Certificatechain"); 
       setPageImage(index, ImageKeys.getImage(ImageKeys.CERTIFICATE));
       PlatformUI.getWorkbench()
           .getHelpSystem()
@@ -186,38 +186,38 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
     GridLayout layout = new GridLayout(2, false);
     composite.setLayout(layout);
     Label titleLabel = new Label(composite, 0);
-    titleLabel.setText("Certificate"); // $NON-NLS-1$
+    titleLabel.setText("Certificate"); 
     titleLabel.setBackground(backgroundColor);
     titleLabel.setForeground(getContainer().getDisplay().getSystemColor(9));
     GridData gd = new GridData();
     gd.horizontalSpan = 2;
     titleLabel.setLayoutData(gd);
-    FontData fontData = new FontData("Times New Roman", FONT_HEIGHT, 0); // $NON-NLS-1$
+    FontData fontData = new FontData("Times New Roman", FONT_HEIGHT, 0); 
     Font font2 = new Font(titleLabel.getDisplay(), fontData);
     titleLabel.setFont(font2);
     try {
       if (certificate instanceof X509Certificate) {
         X509Certificate x509 = (X509Certificate) certificate;
-        makeLine(composite, "Owner", x509.getSubjectX500Principal().getName()); // $NON-NLS-1$
-        makeLine(composite, "Issuer", x509.getIssuerX500Principal().getName()); // $NON-NLS-1$
-        makeLine(composite, "Valid from", x509.getNotBefore().toString()); // $NON-NLS-1$
-        makeLine(composite, "Valid to", x509.getNotAfter().toString()); // $NON-NLS-1$
+        makeLine(composite, "Owner", x509.getSubjectX500Principal().getName()); 
+        makeLine(composite, "Issuer", x509.getIssuerX500Principal().getName()); 
+        makeLine(composite, "Valid from", x509.getNotBefore().toString()); 
+        makeLine(composite, "Valid to", x509.getNotAfter().toString()); 
       }
-      makeLine(composite, "Serial Number", CertTools.getSerialNumber(certificate)); // $NON-NLS-1$
+      makeLine(composite, "Serial Number", CertTools.getSerialNumber(certificate)); 
       makeLine(
           composite,
           "MD5 Fingerprint",
-          CertTools.generateFingerprintInHex(certificate, MD5)); // $NON-NLS-1$
+          CertTools.generateFingerprintInHex(certificate, MD5)); 
       makeLine(
           composite,
           "SHA1 Fingerprint",
-          CertTools.generateFingerprintInHex(certificate, SHA1)); // $NON-NLS-1$
+          CertTools.generateFingerprintInHex(certificate, SHA1)); 
     } catch (Exception e) {
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
     }
     hookContextMenu(getSite().getShell(), composite);
     int index = this.addPage(composite);
-    setPageText(index, "Certificate information"); // $NON-NLS-1$
+    setPageText(index, "Certificate information"); 
     if (compCertificate.isKeyEntry()) {
       setPageImage(index, ImageKeys.getImage(ImageKeys.LOCK_CLOSED));
     } else {
@@ -235,7 +235,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
     GridLayout layout = new GridLayout(1, false);
     composite.setLayout(layout);
     Label titleLabel = new Label(composite, 0);
-    titleLabel.setText("Certificate Signing Request (CSR)"); // $NON-NLS-1$
+    titleLabel.setText("Certificate Signing Request (CSR)"); 
     titleLabel.setBackground(backgroundColor);
     titleLabel.setForeground(getContainer().getDisplay().getSystemColor(9));
     this.csrText = new Text(composite, 2818);
@@ -243,7 +243,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
     this.csrText.setText(SETTING_CSR);
     this.csrText.setEditable(false);
     int index = this.addPage(composite);
-    setPageText(index, "CSR"); // $NON-NLS-1$
+    setPageText(index, "CSR"); 
     setPageImage(index, ImageKeys.getImage(ImageKeys.CERTIFICATE));
     PlatformUI.getWorkbench()
         .getHelpSystem()
@@ -272,12 +272,12 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
       this.exportAction = new ExportCertificateAction(this.completeCertificate);
       this.exportAction.setShell(shell);
     }
-    MenuManager menuMgr = new MenuManager("#PopupMenu"); // $NON-NLS-1$
+    MenuManager menuMgr = new MenuManager("#PopupMenu"); 
     menuMgr.setRemoveAllWhenShown(true);
     menuMgr.addMenuListener(
         manager -> {
           manager.add(CertificateEditor.this.exportAction);
-          manager.add(new Separator("additions")); // $NON-NLS-1$
+          manager.add(new Separator("additions")); 
         });
     Menu menu = menuMgr.createContextMenu(control);
     control.setMenu(menu);
@@ -308,7 +308,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
 
   public static Color getColor(int red, int green, int blue) {
     String name =
-        "COLOR:" + red + "," + green + "," + blue; // $NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "COLOR:" + red + "," + green + "," + blue;  //$NON-NLS-2$ //$NON-NLS-3$
     if (resources.containsKey(name)) {
       return resources.get(name);
     }

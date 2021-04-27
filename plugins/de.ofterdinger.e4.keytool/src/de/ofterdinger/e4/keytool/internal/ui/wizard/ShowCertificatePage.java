@@ -12,8 +12,8 @@ public class ShowCertificatePage extends AbstractShowCertificatePage {
 
   public ShowCertificatePage(String pageName) {
     super(pageName);
-    setTitle("Create a new certificate"); // $NON-NLS-1$
-    setDescription("Verify information"); // $NON-NLS-1$
+    setTitle("Create a new certificate"); 
+    setDescription("Verify information"); 
   }
 
   @Override
@@ -22,7 +22,7 @@ public class ShowCertificatePage extends AbstractShowCertificatePage {
     GridLayout layout = new GridLayout(2, false);
     composite.setLayout(layout);
     setEditable(false);
-    this.keystoreText = this.makeLine(composite, "Keystore", this.keystore); // $NON-NLS-1$
+    this.keystoreText = this.makeLine(composite, "Keystore", this.keystore); 
     addCertificateToPage(composite);
     setControl(composite);
   }

@@ -12,8 +12,8 @@ public class NewCertificateAction extends Action {
   private final Shell shell;
 
   public NewCertificateAction(Shell shell) {
-    setText("New certificate"); // $NON-NLS-1$
-    setToolTipText("Create a new certificate"); // $NON-NLS-1$
+    setText("New certificate"); 
+    setToolTipText("Create a new certificate"); 
     setImageDescriptor(ImageKeys.getImageDescriptor(NEW_CERTIFICATE));
     this.shell = shell;
   }

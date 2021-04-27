@@ -1,7 +1,5 @@
 package de.ofterdinger.e4.keytool.internal.ui;
 
-import de.ofterdinger.e4.keytool.internal.ui.util.TreeObject;
-import de.ofterdinger.e4.keytool.internal.ui.util.TreeParent;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -10,6 +8,9 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
+
+import de.ofterdinger.e4.keytool.internal.ui.util.TreeObject;
+import de.ofterdinger.e4.keytool.internal.ui.util.TreeParent;
 
 abstract class AbstractNavigationView extends ViewPart {
   private TreeViewer viewer;
@@ -70,7 +71,7 @@ abstract class AbstractNavigationView extends ViewPart {
     @Override
     public void inputChanged(Viewer v, Object oldInput, Object newInput) {
       if (v == null) {
-        throw new IllegalStateException("Viewer is null!"); // $NON-NLS-1$
+        throw new IllegalStateException("Viewer is null!");
       }
     }
   }
@@ -78,9 +79,9 @@ abstract class AbstractNavigationView extends ViewPart {
   public class ViewLabelProvider extends LabelProvider {
     @Override
     public final Image getImage(Object obj) {
-      String imageKey = "IMG_OBJ_ELEMENTS"; // $NON-NLS-1$
+      String imageKey = "IMG_OBJ_ELEMENTS";
       if (obj instanceof TreeParent) {
-        imageKey = "IMG_OBJ_FOLDER"; // $NON-NLS-1$
+        imageKey = "IMG_OBJ_FOLDER";
       }
       return PlatformUI.getWorkbench().getSharedImages().getImage(imageKey);
     }

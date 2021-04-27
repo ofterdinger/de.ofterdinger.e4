@@ -22,7 +22,7 @@ import org.eclipse.ui.IWorkbench;
 
 public class ExportCertificateWizard extends Wizard implements INewWizard {
   private static final int NO_OF_TASKS = 2;
-  private static final String TITLE = "Export the certificate"; // $NON-NLS-1$
+  private static final String TITLE = "Export the certificate"; 
   private CompleteCertificate completeCertificate;
   private ExportCertificatePage expPage;
 
@@ -55,7 +55,7 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
                 this.expPage.getCertificatePassword());
       } catch (Exception e) {
         KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
-        MessageDialog.openError(getShell(), "Error", e.getMessage()); // $NON-NLS-1$
+        MessageDialog.openError(getShell(), "Error", e.getMessage()); 
       }
     }
     IRunnableWithProgress op =
@@ -74,7 +74,7 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
                   .getLog()
                   .log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
               throw new InvocationTargetException(
-                  new RuntimeException("Error creating certificate!")); // $NON-NLS-1$
+                  new RuntimeException("Error creating certificate!")); 
             }
           } finally {
             monitor.done();
@@ -88,7 +88,7 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
     } catch (InvocationTargetException e) {
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
       Throwable realException = e.getTargetException();
-      MessageDialog.openError(getShell(), "Error", realException.getMessage()); // $NON-NLS-1$
+      MessageDialog.openError(getShell(), "Error", realException.getMessage()); 
       return false;
     }
     return true;
@@ -96,7 +96,7 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
 
   private void createCertificateFile(String alias, String filename, IProgressMonitor monitor)
       throws CertificateEncodingException, IOException {
-    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS); // $NON-NLS-1$ //$NON-NLS-2$
+    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS);  //$NON-NLS-2$
     try (FileOutputStream fos = new FileOutputStream(new File(filename))) {
       monitor.worked(1);
       fos.write(this.completeCertificate.getCertificate().getEncoded());
@@ -107,7 +107,7 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
 
   private void createCertificateFileWithPrivateKey(
       String alias, String filename, IProgressMonitor monitor) {
-    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS); // $NON-NLS-1$ //$NON-NLS-2$
+    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS);  //$NON-NLS-2$
     monitor.worked(1);
     CertTools.exportPersonalCertToPFX(this.completeCertificate, filename);
     monitor.worked(2);

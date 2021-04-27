@@ -30,8 +30,8 @@ public class OpenPreferencesAction extends Action {
     GeneralPreferencePage page = new GeneralPreferencePage();
     ImageDescriptor imageDescriptor = ImageKeys.getImageDescriptor(ImageKeys.ICON_KEY);
     page.setImageDescriptor(imageDescriptor);
-    page.setTitle("Keytool"); // $NON-NLS-1$
-    page.setDescription("Keytool preferences"); // $NON-NLS-1$
+    page.setTitle("Keytool"); 
+    page.setDescription("Keytool preferences"); 
     page.init(workbench);
     PreferenceManager mgr = new PreferenceManager();
     PreferenceNode node = new PreferenceNode(KeytoolPlugin.PLUGIN_ID, page);

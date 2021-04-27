@@ -32,7 +32,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 
 public class NewCertificateWizard extends Wizard implements INewWizard {
-  public static final String TITLE = "Create a new certificate"; // $NON-NLS-1$
+  public static final String TITLE = "Create a new certificate"; 
   private static final int NO_OF_TASKS = 3;
   private NewCertificatePage newCertificatePage;
   private NewKeystorePage newKeystorePage;
@@ -54,7 +54,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
     addPage(this.newCertificatePage);
     this.newKeystorePage = new NewKeystorePage();
     addPage(this.newKeystorePage);
-    this.showCertificatePage = new ShowCertificatePage("Verify information"); // $NON-NLS-1$
+    this.showCertificatePage = new ShowCertificatePage("Verify information"); 
     addPage(this.showCertificatePage);
   }
 
@@ -117,7 +117,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
     } catch (InvocationTargetException e) {
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
       Throwable realException = e.getTargetException();
-      MessageDialog.openError(getShell(), "Error", realException.getMessage()); // $NON-NLS-1$
+      MessageDialog.openError(getShell(), "Error", realException.getMessage()); 
       return false;
     }
     return true;
@@ -131,7 +131,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
       IProgressMonitor monitor,
       Date notBefore,
       Date notAfter) {
-    monitor.beginTask("Creating " + alias + " certificate", 3); // $NON-NLS-1$ //$NON-NLS-2$
+    monitor.beginTask("Creating " + alias + " certificate", 3);  //$NON-NLS-2$
     CompleteCertificate completeCertificate =
         CertTools.createCertificate(person, notBefore, notAfter);
     KeystoreFile keystoreFile = KeyStoreView.getKeystoreFile(filename);
@@ -146,7 +146,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
       keystore.store(fos, keystoreFile.getPassword().toCharArray());
     } catch (Exception e) {
       KeytoolPlugin.showError(
-          "Error inserting certificate into keystore!", getContainer().getShell()); // $NON-NLS-1$
+          "Error inserting certificate into keystore!", getContainer().getShell()); 
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
     }
     openFileForEditing(alias, monitor, completeCertificate);
@@ -164,7 +164,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
       Date notBefore,
       Date notAfter) {
     monitor.beginTask(
-        "Creating " + alias + " certificate", NO_OF_TASKS); // $NON-NLS-1$ //$NON-NLS-2$
+        "Creating " + alias + " certificate", NO_OF_TASKS);  //$NON-NLS-2$
     CompleteCertificate completeCertificate =
         CertTools.createCertificate(person, notBefore, notAfter);
     completeCertificate.setAlias(alias);
@@ -177,7 +177,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
       KeytoolPlugin.showMessage(
           "Error",
           "Error creating keystore!",
-          getContainer().getShell()); // $NON-NLS-1$ //$NON-NLS-2$
+          getContainer().getShell());  //$NON-NLS-2$
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
     }
     KeyStoreView.addMonitorFile(filename, keystoreType, filePassword);
@@ -191,7 +191,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
     completeCertificate.setKeyEntry(true);
     completeCertificate.setAlias(alias);
     monitor.worked(1);
-    monitor.setTaskName("Opening file for editing..."); // $NON-NLS-1$
+    monitor.setTaskName("Opening file for editing..."); 
     getShell()
         .getDisplay()
         .asyncExec(
@@ -204,7 +204,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
               } catch (PartInitException e) {
                 KeytoolPlugin.showError(
                     "Error showing certificate!",
-                    NewCertificateWizard.this.getContainer().getShell()); // $NON-NLS-1$
+                    NewCertificateWizard.this.getContainer().getShell()); 
                 KeytoolPlugin.getDefault()
                     .getLog()
                     .log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));

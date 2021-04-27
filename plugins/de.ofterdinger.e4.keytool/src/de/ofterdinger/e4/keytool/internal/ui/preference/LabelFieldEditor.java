@@ -9,7 +9,7 @@ class LabelFieldEditor extends FieldEditor {
   private Label label;
 
   public LabelFieldEditor(String value, Composite parent) {
-    super("label", value, parent); // $NON-NLS-1$
+    super("label", value, parent); 
   }
 
   @Override

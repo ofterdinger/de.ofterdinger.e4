@@ -25,13 +25,13 @@ public class NewKeystorePage extends AbstractWizardPage {
   private Text passwordText;
 
   public NewKeystorePage() {
-    this("Select keystore to create"); // $NON-NLS-1$
+    this("Select keystore to create"); 
   }
 
   public NewKeystorePage(String pageName) {
     super(pageName);
     setPageComplete(false);
-    setTitle("Create a new certificate"); // $NON-NLS-1$
+    setTitle("Create a new certificate"); 
     setDescription(pageName);
   }
 
@@ -42,9 +42,9 @@ public class NewKeystorePage extends AbstractWizardPage {
     container.setLayout(layout);
     layout.numColumns = NO_OF_COLUMNS;
     addFilenameInputs(container);
-    this.passwordText = this.makeLine(container, "Keystore password", EMPTY); // $NON-NLS-1$
+    this.passwordText = this.makeLine(container, "Keystore password", EMPTY); 
     new org.eclipse.swt.widgets.Label(container, 0);
-    new Label(container, 0).setText("Keystore type"); // $NON-NLS-1$
+    new Label(container, 0).setText("Keystore type"); 
     this.keystoreTypeCombo = new Combo(container, 12);
     KeystoreUIHelper.populateAvailableKeystoreTypes(this.keystoreTypeCombo);
     setControl(container);
@@ -76,7 +76,7 @@ public class NewKeystorePage extends AbstractWizardPage {
 
   void handleBrowse() {
     FileDialog dialog = new FileDialog(getShell(), 4096);
-    dialog.setText("Create keystore"); // $NON-NLS-1$
+    dialog.setText("Create keystore"); 
     String file = dialog.open();
     dialogChanged();
     if (StringUtils.isNotBlank(file)) {
@@ -87,18 +87,18 @@ public class NewKeystorePage extends AbstractWizardPage {
   @Override
   protected void dialogChanged() {
     if (this.filenameText != null) {
-      this.checkStatus(this.filenameText, "Filename must be specified."); // $NON-NLS-1$
+      this.checkStatus(this.filenameText, "Filename must be specified."); 
       if (this.filenameText.getText().length() > 0) {
         updateStatus(null);
       }
       this.checkStatus(
-          this.passwordText, "Password for the keystore must be specified."); // $NON-NLS-1$
+          this.passwordText, "Password for the keystore must be specified."); 
     }
   }
 
   private void addFilenameInputs(Composite container) {
     Label label = new Label(container, 0);
-    label.setText("Filename"); // $NON-NLS-1$
+    label.setText("Filename"); 
     GridData gridData = new GridData(4, 2, true, false);
     this.filenameText = new Text(container, 2048);
     this.filenameText.setLayoutData(gridData);
@@ -106,7 +106,7 @@ public class NewKeystorePage extends AbstractWizardPage {
     this.filenameText.setEditable(true);
     this.filenameText.addModifyListener(getModifyListener());
     Button button = new Button(container, 8);
-    button.setText("Browse..."); // $NON-NLS-1$
+    button.setText("Browse..."); 
     button.addSelectionListener(
         new SelectionAdapter() {
           @Override
