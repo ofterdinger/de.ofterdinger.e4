@@ -16,6 +16,7 @@
 
   <modules>
     <module>de.ofterdinger.e4.google-java-format</module>
+    <module>de.ofterdinger.e4.keytool</module>
   </modules>
 
 </project>
