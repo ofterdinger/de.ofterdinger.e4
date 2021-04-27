@@ -1,4 +1,4 @@
-package de.ofterdinger.ide.e4.googlejavaformat;
+package de.ofterdinger.e4.googlejavaformat;
 
 import org.eclipse.core.runtime.ILog;
 import org.eclipse.core.runtime.Platform;

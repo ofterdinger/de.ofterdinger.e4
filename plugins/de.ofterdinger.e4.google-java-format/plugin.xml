@@ -3,7 +3,7 @@
 <plugin>
    <extension point="org.eclipse.jdt.core.javaFormatter">
    <javaFormatter
-         class="de.ofterdinger.ide.e4.googlejavaformat.GoogleJavaFormatter"
+         class="de.ofterdinger.e4.googlejavaformat.GoogleJavaFormatter"
          id="com.google.googlejavaformat.java.GoogleJavaFormatter"
          name="google-java-format">
    </javaFormatter>
