@@ -257,20 +257,15 @@ public final class CertTools {
               "SHA1WITHRSA",
               x509Principal,
               complete.getPublicKey(),
-              null, //$NON-NLS-1$
+              null,
               complete.getPrivateKey());
       if (!request.verify()) {
         KeytoolPlugin.getDefault()
             .getLog()
-            .log(
-                new Status(
-                    ERROR,
-                    PLUGIN_ID,
-                    "The certificate request verification failed")); //$NON-NLS-1$
+            .log(new Status(ERROR, PLUGIN_ID, "The certificate request verification failed"));
       }
     } else {
-      throw new IllegalArgumentException(
-          "Could not generate CSR missing public/private key"); //$NON-NLS-1$
+      throw new IllegalArgumentException("Could not generate CSR missing public/private key");
     }
     return request;
   }

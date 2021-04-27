@@ -61,10 +61,9 @@ import org.eclipse.ui.part.MultiPageEditorPart;
 
 public class CertificateEditor extends MultiPageEditorPart implements IResourceChangeListener {
   private static final String COULD_NOT_GENERATE_CSR =
-      "*** Could not generate CSR - Possible wrong certificate password ***"; //$NON-NLS-1$
+      "*** Could not generate CSR - Possible wrong certificate password ***";
   private static final int FONT_HEIGHT = 23;
-  private static final String FOR_CERTIFICATE_NOT_SETTED =
-      "Password for certificate not setted"; //$NON-NLS-1$
+  private static final String FOR_CERTIFICATE_NOT_SETTED = "Password for certificate not setted";
   private static HashMap<String, Color> resources = new HashMap<>();
   private static final String SETTING_CSR = "Setting CSR...";
   Text csrText;
@@ -111,8 +110,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
       setTitleToolTip(ci.getName());
       getConfigurationElement();
     } else {
-      throw new PartInitException(
-          "Invalid Input: Must be IFileEditorInput or CertificateInput"); //$NON-NLS-1$
+      throw new PartInitException("Invalid Input: Must be IFileEditorInput or CertificateInput");
     }
     super.init(site, editorInput);
   }
@@ -323,7 +321,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
                 parentShell,
                 "Enter certificate password",
                 "Enter certificate password",
-                EMPTY, //$NON-NLS-1$ //$NON-NLS-2$
+                EMPTY, //$NON-NLS-2$
                 null);
         int result = pd.open();
         if (result == 0) {

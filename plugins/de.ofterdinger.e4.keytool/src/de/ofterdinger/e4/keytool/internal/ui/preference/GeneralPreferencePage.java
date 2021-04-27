@@ -21,8 +21,7 @@ public class GeneralPreferencePage extends FieldEditorPreferencePage
   public static final String KEYSTORE_FILE = "prefs_keystore_filename";
   public static final String KEYSTORE_TYPE = "prefs_keystore_type";
   public static final String KEYSTORE_PASS = "prefs_keystore_password";
-  public static final String FILECHANGE_MONITOR_INTERVAL =
-      "prefs_keystore_filechange_interval"; //$NON-NLS-1$
+  public static final String FILECHANGE_MONITOR_INTERVAL = "prefs_keystore_filechange_interval";
   private static GeneralPreferencePage instance = null;
   private IWorkbench workbench;
 
@@ -47,27 +46,22 @@ public class GeneralPreferencePage extends FieldEditorPreferencePage
     new SpacerFieldEditor(getFieldEditorParent());
     LabelFieldEditor label =
         new LabelFieldEditor(
-            "Set interval in milliseconds between checks to see if an open keystore has changed.", //$NON-NLS-1$
+            "Set interval in milliseconds between checks to see if an open keystore has changed.",
             getFieldEditorParent());
     label.adjustForNumColumns(NO_OF_COLUMNS);
     IntegerFieldEditor fileChangeMonitorInterval =
         new IntegerFieldEditor(
-            FILECHANGE_MONITOR_INTERVAL,
-            "Filechange monitor interval", //$NON-NLS-1$
-            getFieldEditorParent());
+            FILECHANGE_MONITOR_INTERVAL, "Filechange monitor interval", getFieldEditorParent());
     addField(fileChangeMonitorInterval);
     createLine();
     label =
         new LabelFieldEditor(
-            "Here you may specify a keystore that will be automatically loaded when Eclipse starts.", //$NON-NLS-1$
+            "Here you may specify a keystore that will be automatically loaded when Eclipse starts.",
             getFieldEditorParent());
     label.adjustForNumColumns(3);
     FileFieldEditor keystoreFile =
         new FileFieldEditor(
-            KEYSTORE_FILE,
-            "Keystore to be loaded automatically",
-            true, //$NON-NLS-1$
-            getFieldEditorParent());
+            KEYSTORE_FILE, "Keystore to be loaded automatically", true, getFieldEditorParent());
     addField(keystoreFile);
     StringFieldEditor keystorePassword =
         new StringFieldEditor(KEYSTORE_PASS, "Keystore password", getFieldEditorParent());
@@ -81,7 +75,7 @@ public class GeneralPreferencePage extends FieldEditorPreferencePage
             new String[][] {
               {"Java keystore (JKS)", KeystoreType.JKS.getType()},
               {"PKCS 12", KeystoreType.PKCS12.getType()}
-            }, //$NON-NLS-1$ //$NON-NLS-2$
+            }, //$NON-NLS-2$
             getFieldEditorParent(),
             true);
     addField(keystoreType);

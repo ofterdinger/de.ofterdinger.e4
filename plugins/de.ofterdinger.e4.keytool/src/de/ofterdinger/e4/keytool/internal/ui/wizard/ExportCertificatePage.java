@@ -27,7 +27,7 @@ public class ExportCertificatePage extends AbstractShowCertificatePage {
     super(pageName);
     setTitle("Export the certificate");
     setDescription(
-        "Export the open certificate and put it in a file. Usually its postfix should be 'cer'."); //$NON-NLS-1$
+        "Export the open certificate and put it in a file. Usually its postfix should be 'cer'.");
     if (completeCertificate.getCertificatePerson() == null) {
       CertificatePerson certificatePerson = new CertificatePerson();
       if (completeCertificate.getCertificate() instanceof X509Certificate) {

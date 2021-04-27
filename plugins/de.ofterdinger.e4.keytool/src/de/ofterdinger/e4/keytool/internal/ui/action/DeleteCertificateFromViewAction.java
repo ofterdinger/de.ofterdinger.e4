@@ -75,11 +75,11 @@ public class DeleteCertificateFromViewAction extends AbstractKeytoolViewAction {
 
   @Override
   protected String getActionText() {
-    return "Delete certificate"; //$NON-NLS-1$
+    return "Delete certificate";
   }
 
   @Override
   protected String getActionToolTipText() {
-    return "Delete the certificate"; //$NON-NLS-1$
+    return "Delete the certificate";
   }
 }

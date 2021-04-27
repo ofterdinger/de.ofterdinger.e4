@@ -18,7 +18,7 @@ public class FileChangeMonitor {
   private static final int DEFAULT_QUIESCENT_SCANS = 2;
   private static final long DEFAULT_SCAN_RATE = 60000;
   private static final String CAN_ONLY_INCLUDE_SUBDIRS_FOR_DIRECTORIES =
-      "Can only include subdirs for directories "; //$NON-NLS-1$
+      "Can only include subdirs for directories ";
   private static final String IS_A_FILE = " is a file.";
   private int curQuiescentCount;
   private final Set<IFileChangeListener> listeners = new HashSet<>();
@@ -53,9 +53,7 @@ public class FileChangeMonitor {
       }
       if (filter != null) {
         throw new IllegalArgumentException(
-            "FileFilter only allowed for directories "
-                + file.getAbsolutePath()
-                + IS_A_FILE); //$NON-NLS-1$
+            "FileFilter only allowed for directories " + file.getAbsolutePath() + IS_A_FILE);
       }
       this.monitors.add(new FileMonitor(file));
     } else {
@@ -71,9 +69,7 @@ public class FileChangeMonitor {
       }
       if (filenameFilter != null) {
         throw new IllegalArgumentException(
-            "FilenameFilter only allowed for directories "
-                + file.getAbsolutePath()
-                + IS_A_FILE); //$NON-NLS-1$
+            "FilenameFilter only allowed for directories " + file.getAbsolutePath() + IS_A_FILE);
       }
       this.monitors.add(new FileMonitor(file));
     } else {

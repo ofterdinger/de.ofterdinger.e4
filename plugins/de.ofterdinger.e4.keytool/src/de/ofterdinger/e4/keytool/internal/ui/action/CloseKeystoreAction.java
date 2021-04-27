@@ -67,11 +67,11 @@ public class CloseKeystoreAction extends AbstractKeytoolViewAction {
 
   @Override
   protected String getActionText() {
-    return "&Close Keystore"; //$NON-NLS-1$
+    return "&Close Keystore";
   }
 
   @Override
   protected String getActionToolTipText() {
-    return "Close the current keystore."; //$NON-NLS-1$
+    return "Close the current keystore.";
   }
 }

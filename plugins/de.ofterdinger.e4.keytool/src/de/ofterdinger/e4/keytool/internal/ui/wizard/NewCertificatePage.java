@@ -15,22 +15,18 @@ import org.eclipse.swt.widgets.Text;
 public class NewCertificatePage extends AbstractWizardPage {
   private static final int DEFAULT_YEAR_TO_ADD = 5;
   private static final String LABEL_ALIAS = "Alias";
-  private static final String LABEL_NAME_OF_YOUR_CITY_OR_LOCALITY =
-      "Name of your City or Locality"; //$NON-NLS-1$
-  private static final String LABEL_NAME_OF_YOUR_ORGANIZATIONAL =
-      "Name of your organizational"; //$NON-NLS-1$
+  private static final String LABEL_NAME_OF_YOUR_CITY_OR_LOCALITY = "Name of your City or Locality";
+  private static final String LABEL_NAME_OF_YOUR_ORGANIZATIONAL = "Name of your organizational";
   private static final String LABEL_NAME_OF_YOUR_ORGANIZATIONAL_UNIT =
-      "Name of your organizational unit"; //$NON-NLS-1$
+      "Name of your organizational unit";
   private static final String LABEL_NAME_OF_YOUR_STATE_OR_PROVINCE =
-      "Name of your State or Province"; //$NON-NLS-1$
+      "Name of your State or Province";
   private static final String LABEL_PASS = "Password";
   private static final String LABEL_THE_TWO_LETTER_COUNTRY_CODE_FOR_THIS_UNIT =
-      "The two-letter country code for this unit"; //$NON-NLS-1$
-  private static final String LABEL_VALID_FROM_DD_MM_YYYY =
-      "Valid from (dd-mm-yyyy)"; //$NON-NLS-1$
+      "The two-letter country code for this unit";
+  private static final String LABEL_VALID_FROM_DD_MM_YYYY = "Valid from (dd-mm-yyyy)";
   private static final String LABEL_VALID_TO_DD_MM_YYYY = "Valid to (dd-mm-yyyy)";
-  private static final String LABEL_YOUR_FIRST_AND_LAST_NAME =
-      "Your first and last name"; //$NON-NLS-1$
+  private static final String LABEL_YOUR_FIRST_AND_LAST_NAME = "Your first and last name";
   private static final int NO_OF_COLUMNS = 2;
   private Text aliasText;
   private Text cityText;

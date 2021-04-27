@@ -65,11 +65,11 @@ public class ExportCertificateFromViewAction extends AbstractKeytoolViewAction {
 
   @Override
   protected String getActionText() {
-    return "Export certificate"; //$NON-NLS-1$
+    return "Export certificate";
   }
 
   @Override
   protected String getActionToolTipText() {
-    return "Export the open certificate"; //$NON-NLS-1$
+    return "Export the open certificate";
   }
 }
