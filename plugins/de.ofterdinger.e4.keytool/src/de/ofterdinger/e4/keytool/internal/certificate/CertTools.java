@@ -42,7 +42,7 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Vector;
 
-import org.bouncycastle.asn1.DERObjectIdentifier;
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.x509.X509Name;
 import org.bouncycastle.jce.PKCS10CertificationRequest;
 import org.bouncycastle.jce.X509Principal;
@@ -134,11 +134,11 @@ public final class CertTools {
 	public static CompleteCertificate createClientCertificate(CertificatePerson person, CompleteCertificate issuer, Date notBefore,
 			Date notAfter) throws InvalidKeyException, NoSuchProviderException, SignatureException, CertificateEncodingException,
 			IllegalStateException, NoSuchAlgorithmException {
-		Hashtable<DERObjectIdentifier, String> attrs = new Hashtable<>();
-		Vector<DERObjectIdentifier> order = new Vector<>();
+		Hashtable<ASN1ObjectIdentifier, String> attrs = new Hashtable<>();
+		Vector<ASN1ObjectIdentifier> order = new Vector<>();
 		populate(person, attrs, order);
-		Hashtable<DERObjectIdentifier, String> attrsIssuer = new Hashtable<>();
-		Vector<DERObjectIdentifier> orderIssuer = new Vector<>();
+		Hashtable<ASN1ObjectIdentifier, String> attrsIssuer = new Hashtable<>();
+		Vector<ASN1ObjectIdentifier> orderIssuer = new Vector<>();
 		populate(issuer.getCertificatePerson(), attrsIssuer, orderIssuer);
 
 		X509V3CertificateGenerator v3CertGen = new X509V3CertificateGenerator();
@@ -412,7 +412,8 @@ public final class CertTools {
 		return serialNumber;
 	}
 
-	private static void populate(CertificatePerson person, Hashtable<DERObjectIdentifier, String> attrs, List<DERObjectIdentifier> order) {
+	private static void populate(CertificatePerson person, Hashtable<ASN1ObjectIdentifier, String> attrs,
+			List<ASN1ObjectIdentifier> order) {
 		if (person.getCountryCode() != null) {
 			order.add(X509Name.C);
 			attrs.put(X509Name.C, person.getCountryCode());

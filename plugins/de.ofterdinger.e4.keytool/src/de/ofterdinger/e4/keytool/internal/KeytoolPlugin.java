@@ -6,7 +6,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
 public class KeytoolPlugin extends AbstractUIPlugin {
-	public static final String PLUGIN_ID = "com.sap.xst4e.keytool"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "de.ofterdinger.e4.keytool"; //$NON-NLS-1$
 
 	private static KeytoolPlugin plugin;
 
