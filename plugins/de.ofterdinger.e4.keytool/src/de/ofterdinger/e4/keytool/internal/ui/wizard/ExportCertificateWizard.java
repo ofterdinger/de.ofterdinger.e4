@@ -96,7 +96,7 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
 
   private void createCertificateFile(String alias, String filename, IProgressMonitor monitor)
       throws CertificateEncodingException, IOException {
-    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS); // $NON-NLS-2$
+    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS); 
     try (FileOutputStream fos = new FileOutputStream(new File(filename))) {
       monitor.worked(1);
       fos.write(this.completeCertificate.getCertificate().getEncoded());
@@ -107,7 +107,7 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
 
   private void createCertificateFileWithPrivateKey(
       String alias, String filename, IProgressMonitor monitor) {
-    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS); // $NON-NLS-2$
+    monitor.beginTask("Saving " + alias + " certificate", NO_OF_TASKS); 
     monitor.worked(1);
     CertTools.exportPersonalCertToPFX(this.completeCertificate, filename);
     monitor.worked(2);

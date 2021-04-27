@@ -136,7 +136,7 @@ public class ExportCertificatePage extends AbstractShowCertificatePage {
       KeytoolPlugin.showMessage(
           "File exists",
           "File already exists and will be overriden",
-          getContainer().getShell()); // $NON-NLS-2$
+          getContainer().getShell()); 
     }
   }
 }

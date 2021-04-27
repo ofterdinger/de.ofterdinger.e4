@@ -35,7 +35,7 @@ public class DeleteCertificateFromViewAction extends AbstractKeytoolViewAction {
   public void run() {
     TreeObject selectedTreeObject;
     if (KeytoolPlugin.openConfirm(
-            "Sure?", "Are you sure you want to delete the certificate?", this.shell) // $NON-NLS-2$
+            "Sure?", "Are you sure you want to delete the certificate?", this.shell) 
         && (selectedTreeObject = getSelectedTreeObject()) != null
         && selectedTreeObject.hasParentKeystore()) {
       KeystoreFile keystoreFile = selectedTreeObject.getParent().getKeystoreFile();

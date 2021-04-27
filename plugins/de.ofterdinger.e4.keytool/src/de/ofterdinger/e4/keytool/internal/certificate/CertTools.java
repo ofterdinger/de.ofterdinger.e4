@@ -231,7 +231,7 @@ public final class CertTools {
       X509Certificate cert, PrivateKey privateKey, String filename, String password) {
     try (FileOutputStream fos = new FileOutputStream(filename)) {
       String alias = Long.toHexString(SecureRandom.getInstance("SHA1PRNG").nextLong());
-      KeyStore ks = KeyStore.getInstance("PKCS12", "BC"); // $NON-NLS-2$
+      KeyStore ks = KeyStore.getInstance("PKCS12", "BC"); 
       char[] pwdArray = password.toCharArray();
       ks.load(null, pwdArray);
       Certificate[] certs = new X509Certificate[] {cert};
@@ -402,7 +402,7 @@ public final class CertTools {
   public static CompleteCertificate loadPFX(String filename, String password)
       throws KeyStoreException, NoSuchProviderException, NoSuchAlgorithmException,
           CertificateException, IOException, UnrecoverableKeyException, InvalidKeySpecException {
-    KeyStore ks = KeyStore.getInstance("PKCS12", "BC"); // $NON-NLS-2$
+    KeyStore ks = KeyStore.getInstance("PKCS12", "BC"); 
     try (FileInputStream fis = new FileInputStream(filename)) {
       ks.load(fis, password.toCharArray());
     }

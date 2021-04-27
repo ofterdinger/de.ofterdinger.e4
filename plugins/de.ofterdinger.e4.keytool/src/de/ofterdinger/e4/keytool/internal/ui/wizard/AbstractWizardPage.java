@@ -105,12 +105,12 @@ public abstract class AbstractWizardPage extends WizardPage {
   protected void checkDate(Text dateText, String fieldName) {
     try {
       if (dateText == null || dateText.getText().length() != LENGTH_OF_DATE) {
-        updateStatus("'" + fieldName + "' is not a valid date"); // $NON-NLS-2$
+        updateStatus("'" + fieldName + "' is not a valid date"); 
       } else {
         this.dateFormat.parse(dateText.getText());
       }
     } catch (ParseException parseException) {
-      updateStatus("'" + fieldName + "' is not a valid date"); // $NON-NLS-2$
+      updateStatus("'" + fieldName + "' is not a valid date"); 
     }
   }
 
@@ -129,7 +129,7 @@ public abstract class AbstractWizardPage extends WizardPage {
   protected abstract void dialogChanged();
 
   protected String[] getExtensions() {
-    return new String[] {"*.cer", "*.pfx"}; // $NON-NLS-2$
+    return new String[] {"*.cer", "*.pfx"}; 
   }
 
   protected ModifyListener getModifyListener() {
