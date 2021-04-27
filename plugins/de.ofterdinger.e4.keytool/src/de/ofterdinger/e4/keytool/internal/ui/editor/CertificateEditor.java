@@ -302,7 +302,7 @@ public class CertificateEditor extends MultiPageEditorPart implements IResourceC
   }
 
   public static Color getColor(int red, int green, int blue) {
-    String name = "COLOR:" + red + "," + green + "," + blue;  //$NON-NLS-3$
+    String name = "COLOR:" + red + "," + green + "," + blue; // $NON-NLS-3$
     if (resources.containsKey(name)) {
       return resources.get(name);
     }

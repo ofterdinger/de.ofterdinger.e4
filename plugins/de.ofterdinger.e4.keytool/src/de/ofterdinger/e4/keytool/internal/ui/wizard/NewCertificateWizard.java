@@ -131,7 +131,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
       IProgressMonitor monitor,
       Date notBefore,
       Date notAfter) {
-    monitor.beginTask("Creating " + alias + " certificate", 3); 
+    monitor.beginTask("Creating " + alias + " certificate", 3);
     CompleteCertificate completeCertificate =
         CertTools.createCertificate(person, notBefore, notAfter);
     KeystoreFile keystoreFile = KeyStoreView.getKeystoreFile(filename);
@@ -163,7 +163,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
       IProgressMonitor monitor,
       Date notBefore,
       Date notAfter) {
-    monitor.beginTask("Creating " + alias + " certificate", NO_OF_TASKS); 
+    monitor.beginTask("Creating " + alias + " certificate", NO_OF_TASKS);
     CompleteCertificate completeCertificate =
         CertTools.createCertificate(person, notBefore, notAfter);
     completeCertificate.setAlias(alias);
@@ -173,8 +173,7 @@ public class NewCertificateWizard extends Wizard implements INewWizard {
           completeCertificate, alias, password, filePassword, filename, keystoreType);
       monitor.worked(1);
     } catch (Exception e) {
-      KeytoolPlugin.showMessage(
-          "Error", "Error creating keystore!", getContainer().getShell()); 
+      KeytoolPlugin.showMessage("Error", "Error creating keystore!", getContainer().getShell());
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
     }
     KeyStoreView.addMonitorFile(filename, keystoreType, filePassword);

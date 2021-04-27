@@ -134,9 +134,7 @@ public class ExportCertificatePage extends AbstractShowCertificatePage {
     filenameText.setText(file);
     if (new File(file).isFile()) {
       KeytoolPlugin.showMessage(
-          "File exists",
-          "File already exists and will be overriden",
-          getContainer().getShell()); 
+          "File exists", "File already exists and will be overriden", getContainer().getShell());
     }
   }
 }
