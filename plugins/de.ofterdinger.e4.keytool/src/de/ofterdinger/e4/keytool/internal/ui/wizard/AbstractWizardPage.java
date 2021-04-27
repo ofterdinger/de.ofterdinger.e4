@@ -110,6 +110,7 @@ public abstract class AbstractWizardPage extends WizardPage {
         this.dateFormat.parse(dateText.getText());
       }
     } catch (ParseException parseException) {
+      KeytoolPlugin.getDefault().getLog().warn(parseException.getMessage(), parseException);
       updateStatus("'" + fieldName + "' is not a valid date");
     }
   }

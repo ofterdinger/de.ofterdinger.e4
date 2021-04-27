@@ -84,6 +84,9 @@ public class ExportCertificateWizard extends Wizard implements INewWizard {
       getContainer().run(true, false, op);
     } catch (InterruptedException interruptedException) {
       Thread.currentThread().interrupt();
+      KeytoolPlugin.getDefault()
+          .getLog()
+          .warn(interruptedException.getMessage(), interruptedException);
       return false;
     } catch (InvocationTargetException e) {
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
