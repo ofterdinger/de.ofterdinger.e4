@@ -39,7 +39,7 @@ public class CertificateInput implements IEditorInput {
   }
 
   @Override
-  public final Object getAdapter(Class adapter) {
+  public final <T> T getAdapter(Class<T> adapter) {
     return null;
   }
 

@@ -44,7 +44,8 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Vector;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.x509.X509Name;
+import org.bouncycastle.asn1.pkcs.CertificationRequest;
+import org.bouncycastle.asn1.x500.style.BCStyle;
 import org.bouncycastle.jce.PKCS10CertificationRequest;
 import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
@@ -109,8 +110,7 @@ public final class CertTools {
     }
   }
 
-  public static String certificatonRequestAsCSR(PKCS10CertificationRequest request)
-      throws IOException {
+  public static String certificatonRequestAsCSR(CertificationRequest request) throws IOException {
     byte[] buf = request.getEncoded();
     StringBuilder buff = new StringBuilder();
     buff.append("-----BEGIN NEW CERTIFICATE REQUEST-----\n");
@@ -476,24 +476,24 @@ public final class CertTools {
       Hashtable<ASN1ObjectIdentifier, String> attrs,
       List<ASN1ObjectIdentifier> order) {
     if (person.getCountryCode() != null) {
-      order.add(X509Name.C);
-      attrs.put(X509Name.C, person.getCountryCode());
+      order.add(BCStyle.C);
+      attrs.put(BCStyle.C, person.getCountryCode());
     }
     if (person.getOrganization() != null) {
-      order.add(X509Name.O);
-      attrs.put(X509Name.O, person.getOrganization());
+      order.add(BCStyle.O);
+      attrs.put(BCStyle.O, person.getOrganization());
     }
     if (person.getLocation() != null) {
-      order.add(X509Name.L);
-      attrs.put(X509Name.L, person.getLocation());
+      order.add(BCStyle.L);
+      attrs.put(BCStyle.L, person.getLocation());
     }
     if (person.getName() != null) {
-      order.add(X509Name.CN);
-      attrs.put(X509Name.CN, person.getName());
+      order.add(BCStyle.CN);
+      attrs.put(BCStyle.CN, person.getName());
     }
     if (person.getEmail() != null) {
-      order.add(X509Name.EmailAddress);
-      attrs.put(X509Name.EmailAddress, person.getEmail());
+      order.add(BCStyle.EmailAddress);
+      attrs.put(BCStyle.EmailAddress, person.getEmail());
     }
   }
 }
