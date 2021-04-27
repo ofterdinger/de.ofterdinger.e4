@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.ofterdinger.e4.google-java-format.test
+Bundle-SymbolicName: de.ofterdinger.e4.google-java-format.test;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: de.ofterdinger.e4.google-java-format
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.apache.commons.io;bundle-version="[2.6.0,3.0.0)",
+ org.eclipse.core.expressions;bundle-version="[3.7.0,4.0.0)",
+ org.junit;bundle-version="[4.13.0,5.0.0)",
+ org.mockito;bundle-version="[2.23.0,3.0.0)"
+Bundle-Vendor: Ofterdinger
+Automatic-Module-Name: de.ofterdinger.e4.google-java-format.test
+Export-Package: de.ofterdinger.e4.googlejavaformat.testsuite

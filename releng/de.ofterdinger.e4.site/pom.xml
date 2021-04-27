@@ -6,16 +6,12 @@
     <groupId>de.ofterdinger.e4</groupId>
     <artifactId>reactor</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>..</relativePath>
+    <relativePath>../..</relativePath>
   </parent>
 
-  <artifactId>plugins</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>de.ofterdinger.e4.site</artifactId>
+  <packaging>eclipse-repository</packaging>
 
-  <name>Plugins</name>
-
-  <modules>
-    <module>de.ofterdinger.e4.google-java-format</module>
-  </modules>
+  <name>Site</name>
 
 </project>
