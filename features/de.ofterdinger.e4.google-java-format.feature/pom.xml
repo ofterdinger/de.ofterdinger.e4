@@ -10,6 +10,8 @@
   </parent>
 
   <artifactId>de.ofterdinger.e4.google-java-format.feature</artifactId>
-  <name>Goolge Java Format - Feature</name>
   <packaging>eclipse-feature</packaging>
+
+  <name>Goolge Java Format - Feature</name>
+
 </project>
