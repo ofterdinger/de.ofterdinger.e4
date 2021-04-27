@@ -28,7 +28,7 @@ public class CertificateEditorContributor extends MultiPageEditorActionBarContri
 
   @Override
   public final void contributeToMenu(IMenuManager manager) {
-    IContributionItem item = manager.find("keytool.menus.keytool"); 
+    IContributionItem item = manager.find("keytool.menus.keytool");
     if (item instanceof SubMenuManager) {
       SubMenuManager subManager = (SubMenuManager) item;
       subManager.add(this.exportAction);
@@ -91,7 +91,7 @@ public class CertificateEditorContributor extends MultiPageEditorActionBarContri
     this.exportAction = new ExportCertificateAction(null);
     this.exportAction.setImageDescriptor(
         ImageKeys.getImageDescriptor(ImageKeys.EXPORT_CERTIFICATE));
-    this.exportAction.setId("Keytool.actions.exportAction"); 
+    this.exportAction.setId("Keytool.actions.exportAction");
     PlatformUI.getWorkbench()
         .getHelpSystem()
         .setHelp(this.exportAction, TextConstants.KEYSTORE_VIEW_HELP_ID);

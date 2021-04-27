@@ -19,7 +19,7 @@ public class FileChangeMonitor {
   private static final long DEFAULT_SCAN_RATE = 60000;
   private static final String CAN_ONLY_INCLUDE_SUBDIRS_FOR_DIRECTORIES =
       "Can only include subdirs for directories "; //$NON-NLS-1$
-  private static final String IS_A_FILE = " is a file."; 
+  private static final String IS_A_FILE = " is a file.";
   private int curQuiescentCount;
   private final Set<IFileChangeListener> listeners = new HashSet<>();
   private final List<SubMonitor> monitors = new ArrayList<>();
@@ -181,7 +181,7 @@ public class FileChangeMonitor {
       this.includeSubDirs = theIncludeSubDirs;
       if (this.dir.exists() && !this.dir.isDirectory()) {
         throw new IllegalArgumentException(
-            "DirMonitor can only run on directories " + theDir.getAbsolutePath()); 
+            "DirMonitor can only run on directories " + theDir.getAbsolutePath());
       }
     }
 
@@ -265,7 +265,7 @@ public class FileChangeMonitor {
     public FileMonitor(File f) {
       this.file = f;
       if (this.file.isDirectory()) {
-        throw new IllegalArgumentException("FileMonitor can only monitor files."); 
+        throw new IllegalArgumentException("FileMonitor can only monitor files.");
       }
     }
 

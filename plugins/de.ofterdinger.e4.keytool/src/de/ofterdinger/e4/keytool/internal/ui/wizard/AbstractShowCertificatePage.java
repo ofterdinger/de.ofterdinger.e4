@@ -2,10 +2,9 @@ package de.ofterdinger.e4.keytool.internal.ui.wizard;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
+import de.ofterdinger.e4.keytool.internal.certificate.CertificatePerson;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-
-import de.ofterdinger.e4.keytool.internal.certificate.CertificatePerson;
 
 public abstract class AbstractShowCertificatePage extends AbstractWizardPage {
   private String alias = EMPTY;
@@ -87,9 +86,7 @@ public abstract class AbstractShowCertificatePage extends AbstractWizardPage {
           this.makeLine(
               composite, "The two-letter country code for this unit", this.person.getCountryCode());
     }
-    this.validFromText =
-        this.makeLine(composite, "Valid from (dd-mm-yyyy)", this.validFrom); 
-    this.validToText =
-        this.makeLine(composite, "Valid to (dd-mm-yyyy)", this.validTo); 
+    this.validFromText = this.makeLine(composite, "Valid from (dd-mm-yyyy)", this.validFrom);
+    this.validToText = this.makeLine(composite, "Valid to (dd-mm-yyyy)", this.validTo);
   }
 }

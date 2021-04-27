@@ -28,7 +28,7 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
 public class ImportCertificateWizard extends Wizard implements INewWizard {
-  private static final String TITLE = "Import a certificate"; 
+  private static final String TITLE = "Import a certificate";
   private File fileToImport = null;
   private ImportCertificatePage impPage;
   private NewKeystorePage newKeystorePage;
@@ -41,7 +41,7 @@ public class ImportCertificateWizard extends Wizard implements INewWizard {
   @Override
   public void addPages() {
     super.addPages();
-    this.impPage = new ImportCertificatePage("Choose the certificatefile"); 
+    this.impPage = new ImportCertificatePage("Choose the certificatefile");
     if (this.fileToImport != null) {
       this.impPage.setFileToImport(this.fileToImport);
     }
@@ -103,7 +103,7 @@ public class ImportCertificateWizard extends Wizard implements INewWizard {
                   NoSuchAlgorithmException, CertificateException, InvalidKeySpecException,
                   IOException {
             CompleteCertificate certificate;
-            monitor.beginTask("Importing certificate", 4); 
+            monitor.beginTask("Importing certificate", 4);
             monitor.worked(1);
             if (isWithPrivateKey) {
               certificate = CertTools.loadPFX(filename, password);
@@ -143,7 +143,7 @@ public class ImportCertificateWizard extends Wizard implements INewWizard {
     } catch (InvocationTargetException e) {
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
       Throwable realException = e.getTargetException();
-      MessageDialog.openError(getShell(), "Error", realException.getMessage()); 
+      MessageDialog.openError(getShell(), "Error", realException.getMessage());
       return false;
     }
     return true;

@@ -18,7 +18,7 @@ class TimerThread extends Thread {
     if (getPriority() > 1) {
       setPriority(getPriority() - 1);
     }
-    setName("TimerThread" + ++counter); 
+    setName("TimerThread" + ++counter);
   }
 
   public boolean isNewTasksMayBeScheduled() {

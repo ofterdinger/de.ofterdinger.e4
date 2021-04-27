@@ -44,16 +44,16 @@ public class FileChangedEvent {
     String retVal = null;
     switch (getOperationType()) {
       case FILE_ADDED:
-        retVal = "FILE_ADDED "; 
+        retVal = "FILE_ADDED ";
         break;
       case FILE_REMOVED:
-        retVal = "FILE_REMOVED "; 
+        retVal = "FILE_REMOVED ";
         break;
       case FILE_UPDATED:
-        retVal = "FILE_UPDATED "; 
+        retVal = "FILE_UPDATED ";
         break;
       default:
-        retVal = "<Unknown> "; 
+        retVal = "<Unknown> ";
     }
     return String.valueOf(retVal) + getFileName();
   }

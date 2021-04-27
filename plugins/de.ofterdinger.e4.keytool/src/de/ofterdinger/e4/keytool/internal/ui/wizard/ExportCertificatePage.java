@@ -25,7 +25,7 @@ public class ExportCertificatePage extends AbstractShowCertificatePage {
 
   public ExportCertificatePage(String pageName, CompleteCertificate completeCertificate) {
     super(pageName);
-    setTitle("Export the certificate"); 
+    setTitle("Export the certificate");
     setDescription(
         "Export the open certificate and put it in a file. Usually its postfix should be 'cer'."); //$NON-NLS-1$
     if (completeCertificate.getCertificatePerson() == null) {
@@ -57,7 +57,7 @@ public class ExportCertificatePage extends AbstractShowCertificatePage {
     setEditable(false);
     if (this.completeCertificate.isKeyEntry()) {
       this.exportPrivateKeyCheckBox = new Button(composite, 32);
-      this.exportPrivateKeyCheckBox.setText("Export private key"); 
+      this.exportPrivateKeyCheckBox.setText("Export private key");
       GridData gd = new GridData();
       gd.horizontalSpan = 3;
       this.exportPrivateKeyCheckBox.setLayoutData(gd);
@@ -77,15 +77,14 @@ public class ExportCertificatePage extends AbstractShowCertificatePage {
           });
     }
     Label filenameLabel = new Label(composite, 0);
-    filenameLabel.setText("&Filename:"); 
+    filenameLabel.setText("&Filename:");
     filenameLabel.setLayoutData(new GridData(4, 2, false, false));
     this.filenameText = new Text(composite, 2048);
     this.filenameText.setLayoutData(new GridData(4, 2, true, false));
     this.filenameText.addModifyListener(getModifyListener());
     addBrowseButton(composite, this.filenameText);
     if (this.completeCertificate.isKeyEntry()) {
-      this.certificatePasswordText =
-          this.makeLine(composite, "Certificate&password:", EMPTY); 
+      this.certificatePasswordText = this.makeLine(composite, "Certificate&password:", EMPTY);
     }
     addCertificateToPage(composite);
     setControl(composite);
@@ -115,16 +114,16 @@ public class ExportCertificatePage extends AbstractShowCertificatePage {
   @Override
   protected void dialogChanged() {
     updateStatus(null);
-    this.checkStatus(this.filenameText, "Filename must be specified"); 
+    this.checkStatus(this.filenameText, "Filename must be specified");
   }
 
   @Override
   protected String[] getExtensions() {
-    this.extension = ".cer"; 
+    this.extension = ".cer";
     if (exportPrivateKey()) {
-      this.extension = ".pfx"; 
+      this.extension = ".pfx";
     }
-    return new String[] {"*" + this.extension}; 
+    return new String[] {"*" + this.extension};
   }
 
   @Override
@@ -137,7 +136,7 @@ public class ExportCertificatePage extends AbstractShowCertificatePage {
       KeytoolPlugin.showMessage(
           "File exists",
           "File already exists and will be overriden",
-          getContainer().getShell());  //$NON-NLS-2$
+          getContainer().getShell()); // $NON-NLS-2$
     }
   }
 }

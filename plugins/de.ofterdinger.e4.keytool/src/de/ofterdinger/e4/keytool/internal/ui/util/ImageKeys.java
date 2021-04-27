@@ -8,15 +8,15 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 public final class ImageKeys {
-  public static final String CERTIFICATE = "icons/cert.gif"; 
-  public static final String DELETE_CERTIFICATE = "icons/deletecert.gif"; 
-  public static final String EXPORT_CERTIFICATE = "icons/certexport.gif"; 
-  public static final String IMPORT_CERTIFICATE = "icons/certimport.gif"; 
-  public static final String ICON_KEY = "icons/key.gif"; 
-  public static final String KEY_CLOSE = "icons/key_close.gif"; 
-  public static final String LOCK_CLOSED = "icons/lock_closed.gif"; 
-  public static final String LOCK_OPEN = "icons/lock_open.gif"; 
-  public static final String NEW_CERTIFICATE = "icons/certnew.gif"; 
+  public static final String CERTIFICATE = "icons/cert.gif";
+  public static final String DELETE_CERTIFICATE = "icons/deletecert.gif";
+  public static final String EXPORT_CERTIFICATE = "icons/certexport.gif";
+  public static final String IMPORT_CERTIFICATE = "icons/certimport.gif";
+  public static final String ICON_KEY = "icons/key.gif";
+  public static final String KEY_CLOSE = "icons/key_close.gif";
+  public static final String LOCK_CLOSED = "icons/lock_closed.gif";
+  public static final String LOCK_OPEN = "icons/lock_open.gif";
+  public static final String NEW_CERTIFICATE = "icons/certnew.gif";
   private static ImageRegistry registry = null;
 
   private ImageKeys() {}

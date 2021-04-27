@@ -124,23 +124,23 @@ public class CertificatePerson {
   @Override
   public String toString() {
     StringBuilder buff = new StringBuilder(INITIAL_BUF_SIZE);
-    append("CN=", this.name, buff); 
-    append("OU=", this.organizationUnit, buff); 
-    append("O=", this.organization, buff); 
-    append("L=", this.location, buff); 
-    append("ST=", this.state, buff); 
-    append("C=", this.countryCode, buff); 
+    append("CN=", this.name, buff);
+    append("OU=", this.organizationUnit, buff);
+    append("O=", this.organization, buff);
+    append("L=", this.location, buff);
+    append("ST=", this.state, buff);
+    append("C=", this.countryCode, buff);
     return buff.toString();
   }
 
   private static void append(String leadingText, String value, StringBuilder buff) {
     if (buff.length() > 0) {
-      buff.append(", "); 
+      buff.append(", ");
     }
     if (value != null && value.length() > 0) {
       buff.append(leadingText).append(value);
     } else {
-      buff.append(leadingText).append("Unknown"); 
+      buff.append(leadingText).append("Unknown");
     }
   }
 }

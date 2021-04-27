@@ -188,8 +188,7 @@ public class KeyStoreView extends AbstractNavigationView implements IFileChangeL
       }
       return p1;
     } catch (Exception e) {
-      KeytoolPlugin.showError(
-          "Error creating model for tree!", getSite().getShell()); 
+      KeytoolPlugin.showError("Error creating model for tree!", getSite().getShell());
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
       return null;
     }
@@ -210,7 +209,7 @@ public class KeyStoreView extends AbstractNavigationView implements IFileChangeL
     manager.add(this.importCertificateAction);
     manager.add(new Separator());
     manager.add(this.openKeystoreAction);
-    manager.add(new Separator("additions")); 
+    manager.add(new Separator("additions"));
   }
 
   private void fillLocalPullDown(IMenuManager manager) {
@@ -225,7 +224,7 @@ public class KeyStoreView extends AbstractNavigationView implements IFileChangeL
   }
 
   private void hookContextMenu() {
-    MenuManager menuMgr = new MenuManager("#PopupMenu"); 
+    MenuManager menuMgr = new MenuManager("#PopupMenu");
     menuMgr.setRemoveAllWhenShown(true);
     menuMgr.addMenuListener(KeyStoreView.this::fillContextMenu);
     Menu menu = menuMgr.createContextMenu(getViewer().getControl());
@@ -277,7 +276,7 @@ public class KeyStoreView extends AbstractNavigationView implements IFileChangeL
       getViewer().refresh();
       monitor.addSource(new File(keystoreFilename));
     } catch (Exception e) {
-      KeytoolPlugin.showError("Error loading keystore!", getSite().getShell()); 
+      KeytoolPlugin.showError("Error loading keystore!", getSite().getShell());
       KeytoolPlugin.getDefault().getLog().log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));
     }
     monitor.startMonitor();
@@ -292,12 +291,10 @@ public class KeyStoreView extends AbstractNavigationView implements IFileChangeL
             KeyStoreView.this.openKeyStoreInstance();
           }
         };
-    this.openKeystoreAction.setText("Open Keystore"); 
-    this.openKeystoreAction.setToolTipText("Open a keystore"); 
+    this.openKeystoreAction.setText("Open Keystore");
+    this.openKeystoreAction.setToolTipText("Open a keystore");
     this.openKeystoreAction.setImageDescriptor(
-        PlatformUI.getWorkbench()
-            .getSharedImages()
-            .getImageDescriptor("IMG_OBJ_FOLDER")); 
+        PlatformUI.getWorkbench().getSharedImages().getImageDescriptor("IMG_OBJ_FOLDER"));
     this.closeKeystoreAction = new CloseKeystoreAction(window, getViewer());
     getViewer().addSelectionChangedListener(this.closeKeystoreAction);
     this.exportCertificateAction = new ExportCertificateFromViewAction(window);
@@ -306,9 +303,9 @@ public class KeyStoreView extends AbstractNavigationView implements IFileChangeL
     getViewer().addSelectionChangedListener(this.deleteCertificateAction);
     this.importCertificateAction = new ImportCertificateAction(window);
     this.openPreferencesAction = new OpenPreferencesAction(window);
-    this.openPreferencesAction.setText("Preferences..."); 
+    this.openPreferencesAction.setText("Preferences...");
     this.newCertificateAction =
-        new Action("Create new certificate") { 
+        new Action("Create new certificate") {
 
           @Override
           public void run() {
@@ -344,8 +341,7 @@ public class KeyStoreView extends AbstractNavigationView implements IFileChangeL
                 KeyStoreView.this.getSite().getPage().openEditor(ci, CERTIFICATE_EDITOR_ID);
               } catch (Exception e) {
                 KeytoolPlugin.showError(
-                    "Error showing certificate!",
-                    KeyStoreView.this.getSite().getShell()); 
+                    "Error showing certificate!", KeyStoreView.this.getSite().getShell());
                 KeytoolPlugin.getDefault()
                     .getLog()
                     .log(new Status(ERROR, PLUGIN_ID, e.getMessage(), e));

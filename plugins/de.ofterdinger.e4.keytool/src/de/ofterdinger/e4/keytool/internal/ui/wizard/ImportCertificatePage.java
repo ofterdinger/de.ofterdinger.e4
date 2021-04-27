@@ -27,9 +27,9 @@ public class ImportCertificatePage extends AbstractShowCertificatePage {
 
   protected ImportCertificatePage(String pageName) {
     super(pageName);
-    setDescription("Import a certificate. Either with or without a private key."); 
+    setDescription("Import a certificate. Either with or without a private key.");
     setPageComplete(false);
-    setTitle("Import a certificate"); 
+    setTitle("Import a certificate");
   }
 
   @Override
@@ -46,7 +46,7 @@ public class ImportCertificatePage extends AbstractShowCertificatePage {
     this.keystoreCombo.setLayoutData(new GridData(FILL, CENTER, true, false, 2, 1));
 
     Label filenameLabel = new Label(composite, 0);
-    filenameLabel.setText("&Filename:"); 
+    filenameLabel.setText("&Filename:");
     filenameLabel.setLayoutData(new GridData(FILL, CENTER, false, false));
 
     this.filenameText = new Text(composite, 2048);
@@ -57,11 +57,11 @@ public class ImportCertificatePage extends AbstractShowCertificatePage {
       this.filenameText.setText(this.fileToImport.getAbsolutePath());
     }
 
-    this.alias = this.makeLine(composite, "&Alias", EMPTY); 
+    this.alias = this.makeLine(composite, "&Alias", EMPTY);
     this.alias.setLayoutData(new GridData(FILL, CENTER, true, false, 2, 1));
 
     this.importPrivateKeyCheckBox = new Button(composite, 32);
-    this.importPrivateKeyCheckBox.setText("Contains private key"); 
+    this.importPrivateKeyCheckBox.setText("Contains private key");
     this.importPrivateKeyCheckBox.addSelectionListener(
         new SelectionAdapter() {
           @Override
@@ -77,8 +77,7 @@ public class ImportCertificatePage extends AbstractShowCertificatePage {
           }
         });
     this.importPrivateKeyCheckBox.setLayoutData(new GridData(FILL, LEFT, true, false, 3, 1));
-    this.password =
-        this.makeLine(composite, "&Certificate password", EMPTY, 4196352); 
+    this.password = this.makeLine(composite, "&Certificate password", EMPTY, 4196352);
     this.password.setEditable(false);
     this.password.setEnabled(false);
     setControl(composite);
@@ -128,11 +127,11 @@ public class ImportCertificatePage extends AbstractShowCertificatePage {
   @Override
   protected void dialogChanged() {
     updateStatus(null);
-    this.checkStatus(this.filenameText, "Filename must be specified"); 
+    this.checkStatus(this.filenameText, "Filename must be specified");
     if (this.importPrivateKeyCheckBox != null && this.importPrivateKeyCheckBox.getSelection()) {
-      this.checkStatus(this.password, "Password must be specified"); 
+      this.checkStatus(this.password, "Password must be specified");
     }
-    this.checkStatus(this.alias, "Alias must be specified"); 
+    this.checkStatus(this.alias, "Alias must be specified");
   }
 
   private boolean fieldsArePresent() {

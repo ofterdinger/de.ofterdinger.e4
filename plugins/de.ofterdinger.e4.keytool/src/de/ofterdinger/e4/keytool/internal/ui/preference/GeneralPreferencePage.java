@@ -18,9 +18,9 @@ import org.eclipse.ui.PlatformUI;
 public class GeneralPreferencePage extends FieldEditorPreferencePage
     implements IWorkbenchPreferencePage {
   private static final int NO_OF_COLUMNS = 3;
-  public static final String KEYSTORE_FILE = "prefs_keystore_filename"; 
-  public static final String KEYSTORE_TYPE = "prefs_keystore_type"; 
-  public static final String KEYSTORE_PASS = "prefs_keystore_password"; 
+  public static final String KEYSTORE_FILE = "prefs_keystore_filename";
+  public static final String KEYSTORE_TYPE = "prefs_keystore_type";
+  public static final String KEYSTORE_PASS = "prefs_keystore_password";
   public static final String FILECHANGE_MONITOR_INTERVAL =
       "prefs_keystore_filechange_interval"; //$NON-NLS-1$
   private static GeneralPreferencePage instance = null;
@@ -29,7 +29,7 @@ public class GeneralPreferencePage extends FieldEditorPreferencePage
   public GeneralPreferencePage() {
     super(1);
     setPreferenceStore(KeytoolPlugin.getDefault().getPreferenceStore());
-    setDescription("Customize the keytool."); 
+    setDescription("Customize the keytool.");
   }
 
   @Override
@@ -70,8 +70,7 @@ public class GeneralPreferencePage extends FieldEditorPreferencePage
             getFieldEditorParent());
     addField(keystoreFile);
     StringFieldEditor keystorePassword =
-        new StringFieldEditor(
-            KEYSTORE_PASS, "Keystore password", getFieldEditorParent()); 
+        new StringFieldEditor(KEYSTORE_PASS, "Keystore password", getFieldEditorParent());
     keystorePassword.getTextControl(getFieldEditorParent()).setEchoChar('*');
     addField(keystorePassword);
     RadioGroupFieldEditor keystoreType =
@@ -79,7 +78,7 @@ public class GeneralPreferencePage extends FieldEditorPreferencePage
             KEYSTORE_TYPE,
             "Keystore type",
             1,
-            new String[][] { 
+            new String[][] {
               {"Java keystore (JKS)", KeystoreType.JKS.getType()},
               {"PKCS 12", KeystoreType.PKCS12.getType()}
             }, //$NON-NLS-1$ //$NON-NLS-2$

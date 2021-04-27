@@ -6,8 +6,8 @@ import static de.ofterdinger.e4.keytool.internal.filechanged.TimerTaskClone.VIRG
 import java.util.Date;
 
 class TimerClone {
-  private static final String NEGATIVE_DELAY = "Negative delay."; 
-  private static final String NON_POSITIVE_PERIOD = "Non-positive period."; 
+  private static final String NEGATIVE_DELAY = "Negative delay.";
+  private static final String NON_POSITIVE_PERIOD = "Non-positive period.";
   final TaskQueue queue = new TaskQueue();
   final TimerThread thread = new TimerThread(this.queue);
   private final Object threadReaper =
@@ -88,17 +88,17 @@ class TimerClone {
 
   private void sched(TimerTaskClone task, long time, long period) {
     if (time < 0) {
-      throw new IllegalArgumentException("Illegal execution time."); 
+      throw new IllegalArgumentException("Illegal execution time.");
     }
     TaskQueue taskQueue = this.queue;
     synchronized (taskQueue) {
       if (!this.thread.isNewTasksMayBeScheduled()) {
-        throw new IllegalStateException("Timer already cancelled."); 
+        throw new IllegalStateException("Timer already cancelled.");
       }
       Object object = task.getLock();
       synchronized (object) {
         if (task.getState() != VIRGIN) {
-          throw new IllegalStateException("Task already scheduled or cancelled"); 
+          throw new IllegalStateException("Task already scheduled or cancelled");
         }
         task.setNextExecutionTime(time);
         task.setPeriod(period);

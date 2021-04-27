@@ -14,8 +14,8 @@ public class ImportCertificateAction extends Action {
 
   public ImportCertificateAction(IWorkbenchWindow window) {
     this.shell = window.getShell();
-    setText("Import certificate"); 
-    setToolTipText("Import an certificate into a keystore"); 
+    setText("Import certificate");
+    setToolTipText("Import an certificate into a keystore");
     setImageDescriptor(ImageKeys.getImageDescriptor(IMPORT_CERTIFICATE));
   }
 
