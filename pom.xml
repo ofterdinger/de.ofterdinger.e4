@@ -42,6 +42,10 @@
     <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
     <sonar.organization>ofterdinger</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.language>java</sonar.language>
+    <sonar.inclusions>plugins/**/src/**/*.java</sonar.inclusions>
+    <sonar.test.inclusions>tests/**/*.java</sonar.test.inclusions>
+    <sonar.coverage.jacoco.xmlReportPaths>${jacoco.report.dir}/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
   </properties>
 
   <modules>
