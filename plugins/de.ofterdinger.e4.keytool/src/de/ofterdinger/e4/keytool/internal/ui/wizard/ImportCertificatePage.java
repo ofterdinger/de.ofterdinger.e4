@@ -7,6 +7,7 @@ import static org.eclipse.swt.SWT.LEFT;
 
 import java.io.File;
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -60,7 +61,7 @@ public class ImportCertificatePage extends AbstractShowCertificatePage {
     this.alias = this.makeLine(composite, "&Alias", EMPTY);
     this.alias.setLayoutData(new GridData(FILL, CENTER, true, false, 2, 1));
 
-    this.importPrivateKeyCheckBox = new Button(composite, 32);
+    this.importPrivateKeyCheckBox = new Button(composite, SWT.CHECK);
     this.importPrivateKeyCheckBox.setText("Contains private key");
     this.importPrivateKeyCheckBox.addSelectionListener(
         new SelectionAdapter() {

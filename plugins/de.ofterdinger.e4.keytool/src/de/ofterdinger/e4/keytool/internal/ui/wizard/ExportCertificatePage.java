@@ -7,6 +7,7 @@ import de.ofterdinger.e4.keytool.internal.certificate.CertificatePerson;
 import de.ofterdinger.e4.keytool.internal.certificate.CompleteCertificate;
 import java.io.File;
 import java.security.cert.X509Certificate;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -56,7 +57,7 @@ public class ExportCertificatePage extends AbstractShowCertificatePage {
     composite.setLayout(layout);
     setEditable(false);
     if (this.completeCertificate.isKeyEntry()) {
-      this.exportPrivateKeyCheckBox = new Button(composite, 32);
+      this.exportPrivateKeyCheckBox = new Button(composite, SWT.CHECK);
       this.exportPrivateKeyCheckBox.setText("Export private key");
       GridData gd = new GridData();
       gd.horizontalSpan = 3;

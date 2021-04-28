@@ -16,8 +16,9 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -115,6 +116,7 @@ public class OpenKeyStoreDialog extends Dialog {
     GridData dataSpan2 = new GridData(4, 4, false, false, 2, 1);
     GridData dataNoSpan = new GridData(1, 2, false, false);
     dataNoSpan.minimumWidth = 40;
+
     Label keystoreTypeLabel = new Label(composite, 0);
     keystoreTypeLabel.setText("&Type:");
     keystoreTypeLabel.setLayoutData(dataNoSpan);
@@ -122,25 +124,25 @@ public class OpenKeyStoreDialog extends Dialog {
     GridData gridData = new GridData(4, 4, true, false, 2, 1);
     gridData.widthHint = this.convertHeightInCharsToPixels(20);
     this.keystoreTypeCombo.setLayoutData(gridData);
+
     Label filenameLabel = new Label(composite, 0);
     filenameLabel.setText("&Filename:");
     filenameLabel.setLayoutData(new GridData(1, 2, false, false));
+
     this.filenameText = new Text(composite, 2048);
     this.filenameText.setLayoutData(new GridData(4, 2, true, false));
-    Button button = new Button(composite, 8);
+
+    Button button = new Button(composite, SWT.PUSH);
     button.setText("Browse...");
-    button.addSelectionListener(
-        new SelectionAdapter() {
-          @Override
-          public void widgetSelected(SelectionEvent e) {
-            OpenKeyStoreDialog.this.handleBrowse(e);
-          }
-        });
+    button.addSelectionListener(SelectionListener.widgetSelectedAdapter(this::handleBrowse));
+
     Label passwordLabel = new Label(composite, 0);
     passwordLabel.setText("&Password:");
     passwordLabel.setLayoutData(dataNoSpan);
+
     this.passwordText = new Text(composite, 4196352);
     this.passwordText.setLayoutData(dataSpan2);
+
     initialize();
     composite.redraw();
     return composite;

@@ -7,8 +7,8 @@ import de.ofterdinger.e4.keytool.internal.ui.util.KeystoreUIHelper;
 import org.apache.commons.lang3.StringUtils;
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -69,12 +69,12 @@ public class NewKeystorePage extends AbstractWizardPage {
     return null;
   }
 
-  public String getPassword() {
+  String getPassword() {
     return this.passwordText.getText();
   }
 
-  void handleBrowse() {
-    FileDialog dialog = new FileDialog(getShell(), 4096);
+  private void handleBrowse() {
+    FileDialog dialog = new FileDialog(getShell(), SWT.OPEN);
     dialog.setText("Create keystore");
     String file = dialog.open();
     dialogChanged();
@@ -97,20 +97,18 @@ public class NewKeystorePage extends AbstractWizardPage {
   private void addFilenameInputs(Composite container) {
     Label label = new Label(container, 0);
     label.setText("Filename");
+
     GridData gridData = new GridData(4, 2, true, false);
+
     this.filenameText = new Text(container, 2048);
     this.filenameText.setLayoutData(gridData);
     this.filenameText.setText(EMPTY);
     this.filenameText.setEditable(true);
     this.filenameText.addModifyListener(getModifyListener());
-    Button button = new Button(container, 8);
+
+    Button button = new Button(container, SWT.PUSH);
     button.setText("Browse...");
     button.addSelectionListener(
-        new SelectionAdapter() {
-          @Override
-          public void widgetSelected(SelectionEvent e) {
-            NewKeystorePage.this.handleBrowse();
-          }
-        });
+        SelectionListener.widgetSelectedAdapter(event -> NewKeystorePage.this.handleBrowse()));
   }
 }

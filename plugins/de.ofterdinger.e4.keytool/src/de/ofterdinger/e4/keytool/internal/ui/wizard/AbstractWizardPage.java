@@ -18,8 +18,8 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyListener;
-import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
@@ -56,16 +56,11 @@ public abstract class AbstractWizardPage extends WizardPage {
   }
 
   protected void addBrowseButton(Composite composite, Text filenameText) {
-    Button button = new Button(composite, 8);
+    Button button = new Button(composite, SWT.PUSH);
     button.setText("Browse...");
     button.addSelectionListener(
-        new SelectionAdapter() {
-
-          @Override
-          public void widgetSelected(SelectionEvent e) {
-            AbstractWizardPage.this.handleBrowse(e, filenameText);
-          }
-        });
+        SelectionListener.widgetSelectedAdapter(
+            e -> AbstractWizardPage.this.handleBrowse(e, filenameText)));
   }
 
   protected Combo addOpenKeystores(Composite container, TreeParent selection) {
@@ -140,7 +135,7 @@ public abstract class AbstractWizardPage extends WizardPage {
 
   private void handleBrowse(SelectionEvent e, Text filenameText) {
     if (e.widget instanceof Button) {
-      FileDialog dialog = new FileDialog(getShell(), 4096);
+      FileDialog dialog = new FileDialog(getShell(), SWT.OPEN);
       dialog.setFilterExtensions(getExtensions());
       String file = dialog.open();
       if (StringUtils.isNotBlank(file)) {
