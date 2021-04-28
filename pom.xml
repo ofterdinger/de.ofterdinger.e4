@@ -34,6 +34,13 @@
     <jacoco.report.dir>${test.buildDir}/jacoco</jacoco.report.dir>
 
     <targetDef.artifactId>de.ofterdinger.e4.target.previous</targetDef.artifactId>
+
+    <!-- ============== -->
+    <!-- Sonar settings -->
+    <!-- ============== -->
+    <sonar.projectKey>ofterdinger_de.ofterdinger.e4</sonar.projectKey>
+    <sonar.organization>ofterdinger</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 
   <modules>
