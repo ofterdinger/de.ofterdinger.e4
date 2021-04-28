@@ -6,17 +6,14 @@
       provider-name="%feature.vendorName"
       os="linux,macosx,win32"
       ws="cocoa,gtk,win32"
-      arch="x86_64">
+      arch="x86_64"
+      license-feature="de.ofterdinger.e4.license.feature">
 
    <description url="http://www.ofterdinger.de">
       %feature.description
    </description>
 
-   <copyright url="http://www.ofterdinger.de/copyright">
-      %copyright
-   </copyright>
-
-   <license url="http://www.ofterdinger.de/license">
+   <license url="%licenseURL">
       %license
    </license>
 

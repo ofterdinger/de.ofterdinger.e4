@@ -6,18 +6,12 @@
     <groupId>de.ofterdinger.e4</groupId>
     <artifactId>reactor</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>..</relativePath>
+    <relativePath>../..</relativePath>
   </parent>
 
-  <artifactId>features</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>de.ofterdinger.e4.license.feature</artifactId>
+  <packaging>eclipse-feature</packaging>
 
-  <name>Features</name>
-
-  <modules>
-    <module>de.ofterdinger.e4.google-java-format.feature</module>
-    <module>de.ofterdinger.e4.keytool.feature</module>
-    <module>de.ofterdinger.e4.license.feature</module>
-  </modules>
+  <name>License - Feature</name>
 
 </project>

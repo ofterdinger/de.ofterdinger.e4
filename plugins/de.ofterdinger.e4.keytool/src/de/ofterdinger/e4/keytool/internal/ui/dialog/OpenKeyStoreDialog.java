@@ -69,7 +69,7 @@ public class OpenKeyStoreDialog extends Dialog {
     return this.password;
   }
 
-  void handleBrowse(SelectionEvent e) {
+  private void handleBrowse(SelectionEvent e) {
     String file;
     if (e.widget instanceof Button) {
       file = new FileDialog(getShell(), OPEN).open();
@@ -120,7 +120,8 @@ public class OpenKeyStoreDialog extends Dialog {
     Label keystoreTypeLabel = new Label(composite, 0);
     keystoreTypeLabel.setText("&Type:");
     keystoreTypeLabel.setLayoutData(dataNoSpan);
-    this.keystoreTypeCombo = new Combo(composite, 12);
+
+    this.keystoreTypeCombo = new Combo(composite, SWT.DROP_DOWN | SWT.READ_ONLY);
     GridData gridData = new GridData(4, 4, true, false, 2, 1);
     gridData.widthHint = this.convertHeightInCharsToPixels(20);
     this.keystoreTypeCombo.setLayoutData(gridData);
@@ -140,7 +141,7 @@ public class OpenKeyStoreDialog extends Dialog {
     passwordLabel.setText("&Password:");
     passwordLabel.setLayoutData(dataNoSpan);
 
-    this.passwordText = new Text(composite, 4196352);
+    this.passwordText = new Text(composite, SWT.PASSWORD);
     this.passwordText.setLayoutData(dataSpan2);
 
     initialize();
