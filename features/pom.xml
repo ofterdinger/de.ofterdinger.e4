@@ -16,6 +16,8 @@
 
   <modules>
     <module>de.ofterdinger.e4.google-java-format.feature</module>
+    <module>de.ofterdinger.e4.keytool.feature</module>
+    <module>de.ofterdinger.e4.license.feature</module>
   </modules>
 
 </project>

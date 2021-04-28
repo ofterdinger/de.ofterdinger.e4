@@ -1,13 +1,12 @@
 package de.ofterdinger.e4.googlejavaformat.testsuite;
 
+import de.ofterdinger.e4.googlejavaformat.TestsPdeActivator;
+import de.ofterdinger.e4.googlejavaformat.TestsPdeGoogleJavaFormatter;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-
-import de.ofterdinger.e4.googlejavaformat.TestsPdeActivator;
-import de.ofterdinger.e4.googlejavaformat.TestsPdeGoogleJavaFormatter;
 
 /** Test suite for all PDE tests. */
 @RunWith(Suite.class)
