@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.ofterdinger.ide.eclipse.google-java-format.feature"
+      label="%feature.name"
+      version="1.0.0.qualifier"
+      provider-name="%feature.vendorName"
+      os="linux,macosx,win32"
+      ws="cocoa,gtk,win32"
+      arch="x86_64"
+      license-feature="de.ofterdinger.ide.eclipse.license.feature">
+
+   <description url="http://www.ofterdinger.de">
+      %feature.description
+   </description>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="de.ofterdinger.ide.eclipse.google-java-format"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
