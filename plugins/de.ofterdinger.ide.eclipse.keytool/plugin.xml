@@ -12,7 +12,7 @@
             name="Keytool"
             icon="icons/key.gif"
             category="KeytoolPluginCategory"
-            class="de.ofterdinger.e4.keytool.internal.ui.KeyStoreView"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView"
             id="net.sourceforge.keytool.views.KeyStoreView">
          Shows a list of keystores.
       </view>
@@ -32,15 +32,15 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="de.ofterdinger.e4.keytool.internal.ui.preference.GeneralPreferencePage"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.preference.GeneralPreferencePage"
             id="net.sourceforge.keytool.general"
             name="Keytool"/>
    </extension>
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="de.ofterdinger.e4.keytool.internal.ui.editor.CertificateEditor"
-            contributorClass="de.ofterdinger.e4.keytool.internal.ui.editor.CertificateEditorContributor"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.editor.CertificateEditor"
+            contributorClass="de.ofterdinger.ide.eclipse.keytool.internal.ui.editor.CertificateEditorContributor"
             extensions="cer"
             icon="icons/cert.gif"
             id="net.sourceforge.keytool.editors.CertificateEditor"
@@ -56,7 +56,7 @@
       <wizard
             canFinishEarly="false"
             category="KeytoolPlugin.category"
-            class="de.ofterdinger.e4.keytool.internal.ui.wizard.NewCertificateWizard"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.NewCertificateWizard"
             hasPages="true"
             helpHref="/net.sourceforge.keytool/html/gettingstarted/gettingstarted.html"
             icon="icons/certnew.gif"
@@ -68,7 +68,7 @@
       <wizard
             canFinishEarly="false"
             category="KeytoolPlugin.category"
-            class="de.ofterdinger.e4.keytool.internal.ui.wizard.ImportCertificateWizard"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.ImportCertificateWizard"
             hasPages="true"
             helpHref="/net.sourceforge.keytool/html/gettingstarted/gettingstarted.html"
             icon="icons/certimport.gif"
@@ -83,12 +83,12 @@ Either with a private key (pfx) or without (cer).
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
-      <initializer class="de.ofterdinger.e4.keytool.internal.ui.preference.PreferenceInitializer"/>
+      <initializer class="de.ofterdinger.ide.eclipse.keytool.internal.ui.preference.PreferenceInitializer"/>
    </extension>
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            class="de.ofterdinger.e4.keytool.internal.ui.KeytoolPerspectiveFactory"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.KeytoolPerspectiveFactory"
             icon="icons/key.gif"
             id="net.sourceforge.keytool.perspectives.KeyStorePerspective"
             name="Keytool"/>
@@ -99,7 +99,7 @@ Either with a private key (pfx) or without (cer).
             id="KeytoolPlugin.Contribution"
             objectClass="org.eclipse.core.resources.IFile">
          <action
-               class="de.ofterdinger.e4.keytool.internal.ui.action.ImportCertificateAction"
+               class="de.ofterdinger.ide.eclipse.keytool.internal.ui.action.ImportCertificateAction"
                icon="icons/certimport.gif"
                id="KeytoolPlugin.importCertificateAction"
                label="Import certificate"
@@ -173,19 +173,19 @@ Either with a private key (pfx) or without (cer).
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="de.ofterdinger.e4.keytool.internal.ui.handler.ImportCertificateHandler"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.handler.ImportCertificateHandler"
             commandId="KeytoolPlugin.commands.import">
       </handler>
       <handler
-            class="de.ofterdinger.e4.keytool.internal.ui.handler.OpenKeystoreHandler"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.handler.OpenKeystoreHandler"
             commandId="KeytoolPlugin.commands.open">
       </handler>
       <handler
-            class="de.ofterdinger.e4.keytool.internal.ui.handler.NewCertificateHandler"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.handler.NewCertificateHandler"
             commandId="KeytoolPlugin.commands.new">
       </handler>
       <handler
-            class="de.ofterdinger.e4.keytool.internal.ui.handler.PreferencesHandler"
+            class="de.ofterdinger.ide.eclipse.keytool.internal.ui.handler.PreferencesHandler"
             commandId="KeytoolPlugin.commands.preferences">
       </handler>
    </extension>

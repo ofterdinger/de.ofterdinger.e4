@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %bundle.name
 Bundle-SymbolicName: de.ofterdinger.ide.eclipse.keytool;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.ofterdinger.e4.keytool.internal.KeytoolPlugin
+Bundle-Activator: de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin
 Bundle-Vendor: %bundle.vendor
 Require-Bundle: org.apache.commons.lang3;bundle-version="[3.1.0,4.0.0)",
  org.bouncycastle.bcpg;bundle-version="[1.65.0,2.0.0)",
