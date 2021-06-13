@@ -1,4 +1,4 @@
-package de.ofterdinger.e4.googlejavaformat;
+package de.ofterdinger.ide.eclipse.googlejavaformat;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

@@ -69,7 +69,7 @@
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-surefire-plugin</artifactId>
         <configuration>
-          <testClass>de.ofterdinger.e4.test.AllPdeTests</testClass>
+          <testClass>de.ofterdinger.ide.eclipse.test.AllPdeTests</testClass>
           <environmentVariables>
             <PATH>${PATH}</PATH>
           </environmentVariables>

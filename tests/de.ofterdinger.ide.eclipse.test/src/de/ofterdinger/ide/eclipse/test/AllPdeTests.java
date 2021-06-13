@@ -1,4 +1,4 @@
-package de.ofterdinger.e4.test;
+package de.ofterdinger.ide.eclipse.test;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -9,7 +9,7 @@ import org.junit.runners.Suite.SuiteClasses;
 /** Test suite for all PDE tests. */
 @RunWith(Suite.class)
 @SuiteClasses({ //
-  de.ofterdinger.e4.googlejavaformat.testsuite.AllPdeTests.class //
+  de.ofterdinger.ide.eclipse.googlejavaformat.testsuite.AllPdeTests.class //
 })
 public class AllPdeTests {
 

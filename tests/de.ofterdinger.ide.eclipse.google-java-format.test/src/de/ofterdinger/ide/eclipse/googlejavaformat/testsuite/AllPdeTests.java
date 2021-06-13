@@ -1,7 +1,7 @@
-package de.ofterdinger.e4.googlejavaformat.testsuite;
+package de.ofterdinger.ide.eclipse.googlejavaformat.testsuite;
 
-import de.ofterdinger.e4.googlejavaformat.TestsPdeActivator;
-import de.ofterdinger.e4.googlejavaformat.TestsPdeGoogleJavaFormatter;
+import de.ofterdinger.ide.eclipse.googlejavaformat.TestsPdeActivator;
+import de.ofterdinger.ide.eclipse.googlejavaformat.TestsPdeGoogleJavaFormatter;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;

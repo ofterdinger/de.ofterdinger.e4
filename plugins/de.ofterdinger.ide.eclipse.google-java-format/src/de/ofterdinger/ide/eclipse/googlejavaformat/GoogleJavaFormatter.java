@@ -1,4 +1,4 @@
-package de.ofterdinger.e4.googlejavaformat;
+package de.ofterdinger.ide.eclipse.googlejavaformat;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Range;

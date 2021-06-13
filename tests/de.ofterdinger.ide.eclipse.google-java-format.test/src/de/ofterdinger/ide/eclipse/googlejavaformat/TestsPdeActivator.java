@@ -1,4 +1,4 @@
-package de.ofterdinger.e4.googlejavaformat;
+package de.ofterdinger.ide.eclipse.googlejavaformat;
 
 import java.io.IOException;
 import org.junit.Test;
