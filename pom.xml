@@ -18,8 +18,6 @@
   <name>Developer Tools</name>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
     <!-- ============ -->
     <!-- Java Version -->
     <!-- ============ -->
@@ -39,7 +37,7 @@
     <!-- ============== -->
     <!-- Sonar settings -->
     <!-- ============== -->
-    <sonar.projectKey>de.ofterdinger.ide.eclipse</sonar.projectKey>
+    <sonar.projectKey>ofterdinger_de.ofterdinger.ide.eclipse</sonar.projectKey>
     <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
     <sonar.organization>ofterdinger</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
