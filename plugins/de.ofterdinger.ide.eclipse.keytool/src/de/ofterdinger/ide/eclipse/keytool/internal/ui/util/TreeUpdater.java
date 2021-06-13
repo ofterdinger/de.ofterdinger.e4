@@ -3,18 +3,17 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.util;
 import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.jface.viewers.TreeViewer;
-
 import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
 import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
 import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
 import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
 import de.ofterdinger.ide.eclipse.keytool.internal.filechanged.FileChangedEvent;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.viewers.TreeViewer;
 
 public class TreeUpdater implements Runnable {
   private final FileChangedEvent fileChangedEvent;

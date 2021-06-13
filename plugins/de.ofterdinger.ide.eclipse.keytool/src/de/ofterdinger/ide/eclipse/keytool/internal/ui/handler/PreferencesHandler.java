@@ -1,9 +1,8 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui.handler;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.preference.OpenPreferencesAction;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.ui.IWorkbenchWindow;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.preference.OpenPreferencesAction;
 
 public class PreferencesHandler extends AbstractKeytoolHandler {
 

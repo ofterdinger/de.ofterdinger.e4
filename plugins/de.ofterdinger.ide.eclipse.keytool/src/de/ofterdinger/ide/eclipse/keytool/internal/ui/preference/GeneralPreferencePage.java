@@ -1,5 +1,8 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui.preference;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -11,10 +14,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.PlatformUI;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
 
 public class GeneralPreferencePage extends FieldEditorPreferencePage
     implements IWorkbenchPreferencePage {

@@ -2,13 +2,12 @@ package de.ofterdinger.ide.eclipse.keytool.internal.certificate;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import org.apache.commons.lang3.builder.EqualsBuilder;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
 
 public class CompleteCertificate {
   private String alias;

@@ -7,6 +7,8 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.eclipse.swt.SWT.OPEN;
 import static org.eclipse.ui.plugin.AbstractUIPlugin.imageDescriptorFromPlugin;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.KeystoreUIHelper;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 import org.eclipse.core.runtime.IProduct;
@@ -28,9 +30,6 @@ import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.KeystoreUIHelper;
 
 public class OpenKeyStoreDialog extends Dialog {
 

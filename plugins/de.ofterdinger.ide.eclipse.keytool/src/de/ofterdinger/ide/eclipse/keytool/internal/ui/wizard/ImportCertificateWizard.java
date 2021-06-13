@@ -3,6 +3,12 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard;
 import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -20,13 +26,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
 
 public class ImportCertificateWizard extends Wizard implements INewWizard {
   private File fileToImport = null;

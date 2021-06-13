@@ -1,5 +1,7 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -8,9 +10,6 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
 
 abstract class AbstractNavigationView extends ViewPart {
   private TreeViewer viewer;

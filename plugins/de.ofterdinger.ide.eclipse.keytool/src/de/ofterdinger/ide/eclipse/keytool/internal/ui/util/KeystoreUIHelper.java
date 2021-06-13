@@ -1,8 +1,7 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui.util;
 
-import org.eclipse.swt.widgets.Combo;
-
 import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
+import org.eclipse.swt.widgets.Combo;
 
 public final class KeystoreUIHelper {
 

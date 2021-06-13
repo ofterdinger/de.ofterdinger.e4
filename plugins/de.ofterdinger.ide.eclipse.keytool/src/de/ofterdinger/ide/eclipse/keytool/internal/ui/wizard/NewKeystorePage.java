@@ -2,6 +2,8 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.KeystoreUIHelper;
 import org.apache.commons.lang3.StringUtils;
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.IWizardPage;
@@ -15,9 +17,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.KeystoreUIHelper;
 
 public class NewKeystorePage extends AbstractWizardPage {
   private Text filenameText;

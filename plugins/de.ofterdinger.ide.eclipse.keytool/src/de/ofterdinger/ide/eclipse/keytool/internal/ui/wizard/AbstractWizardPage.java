@@ -4,6 +4,10 @@ import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_I
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.eclipse.swt.SWT.FILL;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,11 +27,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
 
 public abstract class AbstractWizardPage extends WizardPage {
   static final String CREATE_A_NEW_KEYSTORE_TEXT = "<Create a new keystore>";

@@ -1,5 +1,8 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui.editor;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.action.IMenuManager;
@@ -14,10 +17,6 @@ import org.eclipse.ui.ide.IDEActionFactory;
 import org.eclipse.ui.part.MultiPageEditorActionBarContributor;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.ui.texteditor.ITextEditorActionConstants;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
 
 public class CertificateEditorContributor extends MultiPageEditorActionBarContributor {
   private IEditorPart activeEditorPart;

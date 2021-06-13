@@ -1,5 +1,6 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui.action;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.ImportCertificateWizard;
 import java.io.File;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.action.IAction;
@@ -9,8 +10,6 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartSite;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.ImportCertificateWizard;
 
 public class ImportCertificateAction implements IObjectActionDelegate {
   private File selectedFile;

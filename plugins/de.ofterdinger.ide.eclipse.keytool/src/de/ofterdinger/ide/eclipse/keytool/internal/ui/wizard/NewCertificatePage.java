@@ -2,6 +2,8 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertificatePerson;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -10,9 +12,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertificatePerson;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
 
 public class NewCertificatePage extends AbstractWizardPage {
   private static final int DEFAULT_YEAR_TO_ADD = 5;

@@ -4,14 +4,13 @@ import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_I
 import static org.apache.commons.lang3.ArrayUtils.EMPTY_OBJECT_ARRAY;
 import static org.eclipse.ui.plugin.AbstractUIPlugin.imageDescriptorFromPlugin;
 
-import org.eclipse.core.runtime.IAdapterFactory;
-import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.ui.model.IWorkbenchAdapter;
-
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeChainObject;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
+import org.eclipse.core.runtime.IAdapterFactory;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.ui.model.IWorkbenchAdapter;
 
 public class KeystoreAdapterFactory implements IAdapterFactory {
   private IWorkbenchAdapter treeChainObjectAdapter;

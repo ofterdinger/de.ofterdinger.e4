@@ -1,5 +1,7 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui.preference;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.jface.preference.PreferenceManager;
@@ -8,9 +10,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
 
 public class OpenPreferencesAction extends Action {
 

@@ -3,6 +3,8 @@ package de.ofterdinger.ide.eclipse.keytool.internal.certificate;
 import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -51,9 +53,6 @@ import org.bouncycastle.util.encoders.Base64Encoder;
 import org.bouncycastle.x509.X509V1CertificateGenerator;
 import org.bouncycastle.x509.X509V3CertificateGenerator;
 import org.eclipse.core.runtime.Status;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
 
 public final class CertTools {
   public static final long SIX_YEARS = 189216000000L;

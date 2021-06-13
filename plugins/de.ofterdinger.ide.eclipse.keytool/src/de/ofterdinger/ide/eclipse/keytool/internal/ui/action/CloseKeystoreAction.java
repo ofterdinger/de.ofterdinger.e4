@@ -3,12 +3,6 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.action;
 import static de.ofterdinger.ide.eclipse.keytool.internal.filechanged.FileChangedEvent.FILE_REMOVED;
 import static de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys.KEY_CLOSE;
 
-import java.util.List;
-import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.IWorkbenchWindow;
-
 import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
 import de.ofterdinger.ide.eclipse.keytool.internal.filechanged.FileChangedEvent;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
@@ -16,6 +10,11 @@ import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeUpdater;
+import java.util.List;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IWorkbenchWindow;
 
 public class CloseKeystoreAction extends AbstractKeytoolViewAction {
   private final TreeViewer viewer;

@@ -3,6 +3,16 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard;
 import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertificatePerson;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.editor.CertificateInput;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
 import java.io.FileOutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.security.KeyStore;
@@ -20,17 +30,6 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertificatePerson;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.editor.CertificateInput;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
 
 public class NewCertificateWizard extends Wizard implements INewWizard {
   private NewCertificatePage newCertificatePage;

@@ -1,8 +1,7 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui.handler;
 
-import org.eclipse.ui.IWorkbenchWindow;
-
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
+import org.eclipse.ui.IWorkbenchWindow;
 
 public class OpenKeystoreHandler extends AbstractKeytoolHandler {
 

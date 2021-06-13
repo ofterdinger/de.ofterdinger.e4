@@ -5,9 +5,8 @@ import static de.ofterdinger.ide.eclipse.keytool.internal.filechanged.TimerTaskC
 import static de.ofterdinger.ide.eclipse.keytool.internal.filechanged.TimerTaskClone.EXECUTED;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
-import org.eclipse.core.runtime.Status;
-
 import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import org.eclipse.core.runtime.Status;
 
 class TimerThread extends Thread {
   private static int counter = 0;

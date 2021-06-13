@@ -9,6 +9,28 @@ import static de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants.
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreAdapterFactory;
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
+import de.ofterdinger.ide.eclipse.keytool.internal.filechanged.FileChangeMonitor;
+import de.ofterdinger.ide.eclipse.keytool.internal.filechanged.FileChangedEvent;
+import de.ofterdinger.ide.eclipse.keytool.internal.filechanged.IFileChangeListener;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.action.CloseKeystoreAction;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.action.DeleteCertificateFromViewAction;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.action.ExportCertificateFromViewAction;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.dialog.OpenKeyStoreDialog;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.editor.CertificateInput;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.editor.ImportCertificateAction;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.preference.GeneralPreferencePage;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.preference.OpenPreferencesAction;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeUpdater;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.NewCertificateWizard;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -36,29 +58,6 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreAdapterFactory;
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
-import de.ofterdinger.ide.eclipse.keytool.internal.filechanged.FileChangeMonitor;
-import de.ofterdinger.ide.eclipse.keytool.internal.filechanged.FileChangedEvent;
-import de.ofterdinger.ide.eclipse.keytool.internal.filechanged.IFileChangeListener;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.action.CloseKeystoreAction;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.action.DeleteCertificateFromViewAction;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.action.ExportCertificateFromViewAction;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.dialog.OpenKeyStoreDialog;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.editor.CertificateInput;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.editor.ImportCertificateAction;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.preference.GeneralPreferencePage;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.preference.OpenPreferencesAction;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeParent;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeUpdater;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.NewCertificateWizard;
 
 public class KeyStoreView extends AbstractNavigationView implements IFileChangeListener {
   private static KeyStoreView instance;

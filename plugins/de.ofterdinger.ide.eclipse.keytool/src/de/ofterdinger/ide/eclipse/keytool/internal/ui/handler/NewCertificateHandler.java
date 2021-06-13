@@ -1,10 +1,9 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui.handler;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.NewCertificateWizard;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IWorkbenchWindow;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.NewCertificateWizard;
 
 public class NewCertificateHandler extends AbstractKeytoolHandler {
 

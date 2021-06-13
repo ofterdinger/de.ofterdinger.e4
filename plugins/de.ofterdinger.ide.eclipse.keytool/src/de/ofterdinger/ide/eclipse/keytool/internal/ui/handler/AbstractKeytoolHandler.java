@@ -3,6 +3,8 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.handler;
 import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -10,9 +12,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
 
 abstract class AbstractKeytoolHandler extends AbstractHandler {
 

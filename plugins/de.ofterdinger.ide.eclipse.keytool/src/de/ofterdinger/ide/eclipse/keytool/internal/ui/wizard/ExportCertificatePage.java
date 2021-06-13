@@ -2,6 +2,9 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertificatePerson;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
 import java.io.File;
 import java.security.cert.X509Certificate;
 import org.eclipse.swt.SWT;
@@ -13,10 +16,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertificatePerson;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
 
 public class ExportCertificatePage extends AbstractShowCertificatePage {
   private Text certificatePasswordText;

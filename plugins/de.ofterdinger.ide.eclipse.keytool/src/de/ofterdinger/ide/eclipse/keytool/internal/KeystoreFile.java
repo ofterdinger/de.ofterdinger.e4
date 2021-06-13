@@ -1,8 +1,7 @@
 package de.ofterdinger.ide.eclipse.keytool.internal;
 
-import java.security.KeyStore;
-
 import de.ofterdinger.ide.eclipse.keytool.internal.certificate.KeystoreType;
+import java.security.KeyStore;
 
 public class KeystoreFile {
   private final KeyStore keystore;

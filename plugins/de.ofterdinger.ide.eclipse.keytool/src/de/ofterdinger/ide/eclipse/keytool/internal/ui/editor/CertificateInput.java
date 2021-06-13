@@ -2,12 +2,11 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.editor;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
 import java.security.cert.Certificate;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IPersistableElement;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
 
 public class CertificateInput implements IEditorInput {
   private final CompleteCertificate completeCertificate;

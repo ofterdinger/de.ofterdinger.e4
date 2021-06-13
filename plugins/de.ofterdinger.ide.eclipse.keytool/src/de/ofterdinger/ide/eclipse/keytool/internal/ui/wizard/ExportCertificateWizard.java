@@ -3,6 +3,9 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard;
 import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,10 +19,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
 
 public class ExportCertificateWizard extends Wizard implements INewWizard {
   private static final String TITLE = "Export the certificate";

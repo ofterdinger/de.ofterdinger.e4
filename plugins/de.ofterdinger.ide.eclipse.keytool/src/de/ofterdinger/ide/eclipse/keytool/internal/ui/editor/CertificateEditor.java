@@ -6,6 +6,15 @@ import static de.ofterdinger.ide.eclipse.keytool.internal.certificate.Algorithm.
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreAdapterFactory;
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeystoreViewLabelProvider;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.dialog.PasswordDialog;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeChainObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyStoreException;
@@ -49,16 +58,6 @@ import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.MultiPageEditorPart;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreAdapterFactory;
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeystoreViewLabelProvider;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.dialog.PasswordDialog;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeChainObject;
 
 public class CertificateEditor extends MultiPageEditorPart implements IResourceChangeListener {
 

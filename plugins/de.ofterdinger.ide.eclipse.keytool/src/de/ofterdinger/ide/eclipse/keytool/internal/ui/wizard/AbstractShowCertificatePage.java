@@ -2,10 +2,9 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertificatePerson;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertificatePerson;
 
 public abstract class AbstractShowCertificatePage extends AbstractWizardPage {
   private String alias = EMPTY;

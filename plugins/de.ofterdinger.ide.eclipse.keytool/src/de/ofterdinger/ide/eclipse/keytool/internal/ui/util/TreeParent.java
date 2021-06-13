@@ -3,14 +3,13 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.util;
 import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import org.eclipse.core.runtime.Status;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
 
 public class TreeParent extends TreeObject {
   private final List<TreeObject> children = new ArrayList<>();

@@ -1,5 +1,7 @@
 package de.ofterdinger.ide.eclipse.keytool.internal.ui.action;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ISelection;
@@ -10,9 +12,6 @@ import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.actions.ActionFactory;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TextConstants;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
 
 abstract class AbstractKeytoolViewAction extends Action
     implements ISelectionListener, ISelectionChangedListener, ActionFactory.IWorkbenchAction {

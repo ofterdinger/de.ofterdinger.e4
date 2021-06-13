@@ -3,19 +3,18 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.action;
 import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
-import java.security.KeyStoreException;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.wizard.WizardDialog;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IWorkbenchWindow;
-
 import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
 import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CertTools;
 import de.ofterdinger.ide.eclipse.keytool.internal.certificate.CompleteCertificate;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
 import de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.ExportCertificateWizard;
+import java.security.KeyStoreException;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IWorkbenchWindow;
 
 public class ExportCertificateFromViewAction extends AbstractKeytoolViewAction {
   private Shell shell;

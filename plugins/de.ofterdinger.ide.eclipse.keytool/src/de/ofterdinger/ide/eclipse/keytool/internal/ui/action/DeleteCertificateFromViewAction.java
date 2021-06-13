@@ -3,6 +3,11 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.action;
 import static de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin.PLUGIN_ID;
 import static org.eclipse.core.runtime.IStatus.ERROR;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
+import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.security.KeyStore;
@@ -13,12 +18,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.KeystoreFile;
-import de.ofterdinger.ide.eclipse.keytool.internal.KeytoolPlugin;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.KeyStoreView;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.TreeObject;
 
 public class DeleteCertificateFromViewAction extends AbstractKeytoolViewAction {
   private Shell shell;

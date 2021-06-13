@@ -2,13 +2,12 @@ package de.ofterdinger.ide.eclipse.keytool.internal.ui.editor;
 
 import static de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys.IMPORT_CERTIFICATE;
 
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
+import de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.ImportCertificateWizard;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
-
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.util.ImageKeys;
-import de.ofterdinger.ide.eclipse.keytool.internal.ui.wizard.ImportCertificateWizard;
 
 public class ImportCertificateAction extends Action {
   private Shell shell;
