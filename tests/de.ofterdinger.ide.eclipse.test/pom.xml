@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>de.ofterdinger.ide.eclipse</groupId>
+    <artifactId>reactor</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../..</relativePath>
+  </parent>
+
+  <artifactId>de.ofterdinger.ide.eclipse.test</artifactId>
+  <packaging>eclipse-test-plugin</packaging>
+
+  <name>Test Suite</name>
+
+  <properties>
+    <os-jvm-flags /> <!-- for the default case -->
+    <skipPdeTests>false</skipPdeTests>
+  </properties>
+
+  <build>
+    <plugins>
+      <!-- ====================== -->
+      <!-- Test and code coverage -->
+      <!-- ====================== -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <executions>
+          <!-- Prepares the property pointing to the JaCoCo runtime agent which is passed as VM argument when Maven the Surefire
+            plugin is executed. -->
+          <execution>
+            <id>jacoco-pre-unit-test</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+            <configuration>
+              <!-- Sets the name of the property containing the settings for JaCoCo runtime agent. -->
+              <propertyName>tychoSurefireArgLine</propertyName>
+            </configuration>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>report-aggregate</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${jacoco.report.dir}</outputDirectory>
+            </configuration>
+          </execution>
+          <!-- Ensures that the code coverage report for unit tests is created after unit tests have been run. -->
+          <execution>
+            <id>jacoco-post-unit-test</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+            <configuration>
+              <!-- Sets the output directory for the code coverage report. -->
+              <outputDirectory>${jacoco.report.dir}</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <configuration>
+          <testClass>de.ofterdinger.e4.test.AllPdeTests</testClass>
+          <environmentVariables>
+            <PATH>${PATH}</PATH>
+          </environmentVariables>
+          <skipTests>${skipPdeTests}</skipTests>
+          <useUIHarness>true</useUIHarness>
+          <useUIThread>true</useUIThread>
+          <argLine>-Xms1G -Xmx2G ${os-jvm-flags} ${tychoSurefireArgLine}</argLine>
+          <showEclipseLog>true</showEclipseLog>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>macosx-jvm-flags</id>
+      <activation>
+        <os>
+          <family>mac</family>
+        </os>
+      </activation>
+      <properties>
+        <os-jvm-flags>-XstartOnFirstThread</os-jvm-flags>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>skipTests-pdeTests</id>
+      <activation>
+        <property>
+          <name>skipTests</name>
+        </property>
+      </activation>
+      <properties>
+        <skipPdeTests>true</skipPdeTests>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>

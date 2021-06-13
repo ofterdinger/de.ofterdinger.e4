@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.ofterdinger.ide.eclipse.license.feature"
+      label="License"
+      version="1.0.0.qualifier"
+      provider-name="Ofterdinger">
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+</feature>

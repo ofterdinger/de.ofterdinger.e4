@@ -6,10 +6,10 @@
   <parent>
     <groupId>de.ofterdinger</groupId>
     <artifactId>tycho-parent</artifactId>
-    <version>0.0.9</version>
+    <version>0.0.10</version>
   </parent>
 
-  <groupId>de.ofterdinger.e4</groupId>
+  <groupId>de.ofterdinger.ide.eclipse</groupId>
   <artifactId>reactor</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -33,12 +33,12 @@
     <test.buildDir>${project.basedir}/../../tests/de.ofterdinger.e4.test/target</test.buildDir>
     <jacoco.report.dir>${test.buildDir}/jacoco</jacoco.report.dir>
 
-    <targetDef.artifactId>de.ofterdinger.e4.target.previous</targetDef.artifactId>
+    <targetDef.artifactId>de.ofterdinger.ide.eclipse.target.previous</targetDef.artifactId>
 
     <!-- ============== -->
     <!-- Sonar settings -->
     <!-- ============== -->
-    <sonar.projectKey>de.ofterdinger.e4</sonar.projectKey>
+    <sonar.projectKey>de.ofterdinger.ide.eclipse</sonar.projectKey>
     <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
     <sonar.organization>ofterdinger</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -104,7 +104,7 @@
         </os>
       </activation>
       <properties>
-        <targetDef.artifactId>de.ofterdinger.e4.target.latest</targetDef.artifactId>
+        <targetDef.artifactId>de.ofterdinger.ide.eclipse.target.latest</targetDef.artifactId>
       </properties>
     </profile>
 
@@ -116,7 +116,7 @@
         </os>
       </activation>
       <properties>
-        <targetDef.artifactId>de.ofterdinger.e4.target.latest</targetDef.artifactId>
+        <targetDef.artifactId>de.ofterdinger.ide.eclipse.target.latest</targetDef.artifactId>
       </properties>
     </profile>
 
@@ -128,7 +128,7 @@
         </os>
       </activation>
       <properties>
-        <targetDef.artifactId>de.ofterdinger.e4.target.previous</targetDef.artifactId>
+        <targetDef.artifactId>de.ofterdinger.ide.eclipse.target.previous</targetDef.artifactId>
       </properties>
     </profile>
 
