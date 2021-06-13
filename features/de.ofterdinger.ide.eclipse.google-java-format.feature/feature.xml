@@ -18,7 +18,7 @@
    </license>
 
    <plugin
-         id="de.ofterdinger.e4.google-java-format"
+         id="de.ofterdinger.ide.eclipse.google-java-format"
          download-size="0"
          install-size="0"
          version="0.0.0"

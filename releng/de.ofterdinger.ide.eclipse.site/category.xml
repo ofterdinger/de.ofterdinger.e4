@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature id="de.ofterdinger.e4.google-java-format.feature">
-      <category name="de.ofterdinger.e4.tools"/>
+   <feature id="de.ofterdinger.ide.eclipse.google-java-format.feature">
+      <category name="de.ofterdinger.ide.eclipse.tools"/>
    </feature>
-   <feature id="de.ofterdinger.e4.keytool.feature">
-      <category name="de.ofterdinger.e4.tools"/>
+   <feature id="de.ofterdinger.ide.eclipse.keytool.feature">
+      <category name="de.ofterdinger.ide.eclipse.tools"/>
    </feature>
 
-   <category-def name="de.ofterdinger.e4.tools" label="Tools"/>
+   <category-def name="de.ofterdinger.ide.eclipse.tools" label="Tools"/>
 </site>
