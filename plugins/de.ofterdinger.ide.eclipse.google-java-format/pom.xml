@@ -15,10 +15,6 @@
   <name>Google Java Format</name>
   <description>A Java source code formatter that follows Google Java Style.</description>
 
-  <properties>
-    <google-java-format.version>1.10.0</google-java-format.version>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>com.google.googlejavaformat</groupId>
